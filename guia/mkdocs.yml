@@ -56,5 +56,15 @@ nav:
       - empieza/index.md
       - Teléfono y web: empieza/telefono-y-web.md
       - Primeros pasos: empieza/primeros-pasos.md
+  - Presupuestar:
+      - presupuestar/index.md
+      - Dale un trabajo a cada boliviano: presupuestar/cada-boliviano-un-trabajo.md
+      - Presupuestos y grupos: presupuestar/presupuestos-y-grupos.md
+      - Asignar y mover dinero: presupuestar/asignar-y-mover.md
+      - Metas: presupuestar/metas.md
+      - Cuando gastas de más: presupuestar/sobregasto.md
+      - Gastos irregulares: presupuestar/gastos-irregulares.md
+      - La rutina del mes: presupuestar/rutina-mensual.md
+      - Ejemplos de la vida real: presupuestar/ejemplos.md
   - Uso diario: uso-diario/index.md
   - Preguntas frecuentes: preguntas/index.md

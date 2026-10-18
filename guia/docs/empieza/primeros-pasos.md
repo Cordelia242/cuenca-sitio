@@ -38,7 +38,7 @@ Tu espacio ya trae presupuestos de ejemplo, ordenados en grupos:
 | Personal | Educación, Ropa, Ocio y salidas |
 | Ahorro | Fondo de emergencia, Metas |
 
-Puedes cambiarles el nombre, borrar los que no uses o crear otros. Lo verás en [Presupuestos y grupos](../uso-diario/index.md).
+Puedes cambiarles el nombre, borrar los que no uses o crear otros. Lo verás en [Presupuestos y grupos](../presupuestar/presupuestos-y-grupos.md).
 
 ## 3. Crea tu primera cuenta
 
@@ -122,5 +122,5 @@ El gasto se descuenta del presupuesto "Comida". En **Planes** verás cuánto te 
 
 ## ¿Y ahora?
 
-- Si quieres entender el método a fondo, sigue con [Presupuestar en el día a día](../uso-diario/index.md).
+- Si quieres entender el método a fondo, sigue con [Presupuestar en el día a día](../presupuestar/index.md).
 - Si prefieres aprender la app por partes, ve a [Usar la app](../uso-diario/index.md).

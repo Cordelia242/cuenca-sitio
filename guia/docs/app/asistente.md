@@ -17,7 +17,7 @@ El asistente usa un servicio de inteligencia artificial externo. Para usarlo, ne
 
     1. Ve a **Más → Configuraciones**.
     2. En **Asistente de voz**, toca **Clave y modelo**.
-    3. Pega tu **Clave de API de Gemini** y toca **Verificar clave**.
+    3. Pega tu **Clave de API de Gemini** y toca **Verificar clave**. Esa clave es un código personal que te da Google para que el asistente pueda entenderte y responder.
     4. Toca **Guardar clave** y elige un **Modelo**.
 
 === "En la web"
@@ -26,7 +26,7 @@ El asistente usa un servicio de inteligencia artificial externo. Para usarlo, ne
 
     1. Ve a **Configuración**, a la sección **Asistente de voz**.
     2. Elige el **Proveedor activo**.
-    3. Pega la clave, toca **Verificar clave** y luego **Guardar clave**.
+    3. Pega la clave (el código personal que te da el proveedor para que el asistente pueda responder), toca **Verificar clave** y luego **Guardar clave**.
     4. Elige un **Modelo**.
 
 Para borrarla, toca **Quitar clave**.

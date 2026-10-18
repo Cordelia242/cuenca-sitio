@@ -18,7 +18,7 @@ Un **atajo** es un movimiento ya armado que registras con un solo toque. Por eje
 
 === "En la web"
 
-    En la web se llaman **Acciones rápidas** y están en **Asistente → Acciones rápidas**. Las ejecutas con un clic o desde la paleta de comandos, y justo después puedes **Deshacer**.
+    En la web se llaman **Acciones rápidas** y están en el menú lateral, dentro del grupo **Asistente → Acciones rápidas**. Las ejecutas con un clic o desde la paleta de comandos, y justo después puedes **Deshacer**.
 
 ## Widgets del teléfono
 

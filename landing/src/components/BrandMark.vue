@@ -1,24 +1,19 @@
 <template>
-  <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
-    <rect width="32" height="32" rx="8" fill="var(--water)" />
-    <path
-      d="M16 4.5c2.6 3.3 4.2 5.6 4.2 7.6a4.2 4.2 0 0 1-8.4 0c0-2 1.6-4.3 4.2-7.6z"
-      fill="var(--on-water)"
-    />
-    <path
-      d="M5.5 19.5h21c0 4.4-4.7 8-10.5 8s-10.5-3.6-10.5-8z"
-      fill="none"
-      stroke="var(--on-water)"
-      stroke-width="2.6"
-      stroke-linejoin="round"
-    />
+  <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
+    <path d="M18 64 Q34 58 50 64 T82 64 C79 77 66 86 50 86 C34 86 21 77 18 64 Z" fill="var(--accent)" />
+    <g fill="none" stroke="var(--ink)" stroke-linecap="round" stroke-width="7">
+      <path d="M14 44 C14 68 30 86 50 86 C70 86 86 68 86 44" stroke-width="9" />
+      <path d="M26 12 C26 32 44 38 46 54" />
+      <path d="M50 8 L50 54" />
+      <path d="M74 12 C74 32 56 38 54 54" />
+    </g>
   </svg>
 </template>
 
 <style scoped>
 .mark {
-  width: 2rem;
-  height: 2rem;
+  width: 2.25rem;
+  height: 2.25rem;
   flex: none;
 }
 </style>

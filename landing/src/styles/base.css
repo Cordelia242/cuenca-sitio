@@ -1,36 +1,32 @@
 :root {
   color-scheme: light dark;
-  --bg: #f6f1e7;
-  --surface: #fffaf2;
-  --surface-2: #efe6d6;
-  --ink: #1b2826;
-  --muted: #4c5a57;
-  --water: #0d6660;
-  --on-water: #ffffff;
-  --water-soft: #cfe6e1;
-  --clay: #a8431f;
-  --clay-soft: #f3d6c8;
-  --sun: #e3a13a;
-  --line: rgba(27, 40, 38, 0.14);
+  /* Marca Cuenca: Tinta, Papel y un único acento (Positivo). */
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --surface-2: #f1f1f1;
+  --ink: #111111;
+  --muted: #6b6b6b;
+  --accent: #1d7a46;
+  --accent-hover: #145a33;
+  --accent-text: #1d7a46;
+  --accent-soft: #e0f0e6;
+  --on-accent: #ffffff;
+  --line: #e4e4e4;
   --radius: 20px;
-  --display: 'Fraunces Variable', Georgia, 'Times New Roman', serif;
-  --body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --display: 'Outfit', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --body: 'Outfit', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0d1615;
-    --surface: #142220;
-    --surface-2: #1b2c29;
-    --ink: #ecf1ec;
-    --muted: #a7b6b1;
-    --water: #5cc8b8;
-    --on-water: #0d1615;
-    --water-soft: #17302c;
-    --clay: #f2916a;
-    --clay-soft: #3a2219;
-    --sun: #f0b955;
-    --line: rgba(236, 241, 236, 0.14);
+    --bg: #111111;
+    --surface: #181818;
+    --surface-2: #1f1f1f;
+    --ink: #fafafa;
+    --muted: #bdbdbd;
+    --accent-text: #4fb87f;
+    --accent-soft: #14271c;
+    --line: #2e2e2e;
   }
 }
 
@@ -67,21 +63,19 @@ h2,
 h3 {
   margin: 0;
   font-family: var(--display);
-  font-weight: 650;
+  font-weight: 600;
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   overflow-wrap: break-word;
   text-wrap: balance;
 }
 
 h1 {
   font-size: clamp(2.4rem, 7.5vw + 0.5rem, 4.75rem);
-  font-variation-settings: 'opsz' 144;
 }
 
 h2 {
   font-size: clamp(1.9rem, 4vw + 0.7rem, 3.1rem);
-  font-variation-settings: 'opsz' 96;
 }
 
 h3 {
@@ -103,7 +97,7 @@ svg {
 }
 
 :focus-visible {
-  outline: 3px solid var(--clay);
+  outline: 3px solid var(--accent-text);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -120,9 +114,9 @@ svg {
 .eyebrow {
   display: inline-block;
   margin-bottom: 1rem;
-  color: var(--clay);
+  color: var(--accent-text);
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -173,7 +167,7 @@ svg {
   border: 1.5px solid transparent;
   border-radius: 999px;
   font: inherit;
-  font-weight: 650;
+  font-weight: 600;
   line-height: 1.2;
   text-align: center;
   text-decoration: none;
@@ -184,23 +178,25 @@ svg {
 }
 
 .btn-primary {
-  background: var(--water);
-  color: var(--on-water);
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--on-accent);
 }
 
 .btn-primary:hover {
   transform: translateY(-1px);
-  filter: brightness(1.08);
+  border-color: var(--accent-hover);
+  background: var(--accent-hover);
 }
 
 .btn-ghost {
-  border-color: var(--line);
+  border-color: var(--muted);
   background: transparent;
   color: var(--ink);
 }
 
 .btn-ghost:hover {
-  border-color: var(--water);
+  border-color: var(--accent-text);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -95,8 +95,8 @@ const features = [
   height: 2.75rem;
   margin-bottom: 1rem;
   border-radius: 14px;
-  background: var(--water-soft);
-  color: var(--water);
+  background: var(--accent-soft);
+  color: var(--accent-text);
 }
 
 .icon svg {

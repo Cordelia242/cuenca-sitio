@@ -12,9 +12,9 @@ const repoUrl = 'https://github.com/Cordelia242/cuenca-sitio'
       <div class="about">
         <div class="brand">
           <BrandMark />
-          <span class="brand-name">Cuenca</span>
+          <span class="brand-name">cuenca</span>
         </div>
-        <p>Presupuesto personal, local-first.</p>
+        <p>Todo tu dinero, en un mismo cauce.</p>
       </div>
       <nav aria-label="Pie de página">
         <ul>
@@ -53,7 +53,9 @@ const repoUrl = 'https://github.com/Cordelia242/cuenca-sitio'
 .brand-name {
   font-family: var(--display);
   font-size: 1.35rem;
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
 }
 
 .about p {

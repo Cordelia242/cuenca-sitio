@@ -47,15 +47,15 @@ const steps = [
 
 .steps li {
   padding-top: 1rem;
-  border-top: 2px solid var(--water);
+  border-top: 2px solid var(--accent);
 }
 
 .num {
   display: block;
-  color: var(--clay);
+  color: var(--accent-text);
   font-family: var(--display);
   font-size: clamp(3.5rem, 8vw, 5rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1;
 }
 

@@ -16,7 +16,7 @@ const links = [
     <div class="container bar">
       <a class="brand" href="#" aria-label="Cuenca, inicio">
         <BrandMark />
-        <span class="brand-name">Cuenca</span>
+        <span class="brand-name">cuenca</span>
       </a>
       <nav class="nav" aria-label="Principal">
         <ul class="anchors">
@@ -61,8 +61,9 @@ const links = [
 .brand-name {
   font-family: var(--display);
   font-size: 1.45rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
 }
 
 .nav {
@@ -82,7 +83,7 @@ const links = [
 .anchors a {
   color: var(--muted);
   font-size: 0.95rem;
-  font-weight: 550;
+  font-weight: 500;
   text-decoration: none;
 }
 

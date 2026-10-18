@@ -38,24 +38,13 @@ onBeforeUnmount(() => cancelAnimationFrame(frame))
 
 <template>
   <section class="hero" aria-labelledby="hero-title">
-    <svg class="contours" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <g fill="none" stroke="var(--water)" stroke-width="1.5">
-        <path d="M-20 520C180 430 300 560 520 500s360-170 560-110 160 60 200 30" />
-        <path d="M-20 470C170 380 310 510 520 450s370-150 560-95 170 50 200 20" />
-        <path d="M-20 420C160 330 320 460 520 400s380-130 560-80 180 40 200 10" />
-        <path d="M-20 370C150 280 330 410 520 350s390-110 560-65 190 30 200 0" />
-        <path d="M-20 320C140 230 340 360 520 300s400-90 560-50 200 20 200-10" />
-        <path d="M-20 270C130 180 350 310 520 250s410-70 560-35 210 10 200-20" />
-      </g>
-    </svg>
-
     <div class="container grid">
       <div class="copy">
         <p class="eyebrow">Presupuesto personal, local-first</p>
-        <h1>Dale un trabajo a cada boliviano.</h1>
+        <h1 id="hero-title">Todo tu dinero, en un mismo cauce.</h1>
         <p class="lede">
-          Cuenca te ayuda a decidir a dónde va tu dinero antes de gastarlo: asignas cada boliviano a un presupuesto y
-          sabes, en todo momento, cuánto te queda para lo que importa.
+          Dale un trabajo a cada boliviano: decide a dónde va tu dinero antes de gastarlo y ten claro,
+          en todo momento, cuánto te queda para lo que importa.
         </p>
         <div class="ctas">
           <a class="btn btn-primary" :href="appUrl">Abrir Cuenca</a>
@@ -64,11 +53,8 @@ onBeforeUnmount(() => cancelAnimationFrame(frame))
         <p class="note">App para Android y cliente web para computadora.</p>
       </div>
 
-      <figure class="device" role="img" aria-label="Ejemplo ilustrativo: Disponible para asignar Bs 0, con cuatro presupuestos llenos: Alquiler Bs 2.000, Comida Bs 1.400, Transporte Bs 600 y Ahorro Bs 800.">
-        <div class="card" aria-hidden="true">
-          <svg class="drops" viewBox="0 0 300 60">
-            <path v-for="(x, i) in [40, 110, 190, 255]" :key="x" class="drop" :style="{ '--d': `${i * 0.55}s` }" :transform="`translate(${x} 4)`" d="M0 0c4 5 6 8 6 11a6 6 0 0 1-12 0c0-3 2-6 6-11z" />
-          </svg>
+      <figure class="device">
+        <div class="card" role="img" aria-label="Ejemplo ilustrativo: Disponible para asignar Bs 0, con cuatro presupuestos llenos: Alquiler Bs 2.000, Comida Bs 1.400, Transporte Bs 600 y Ahorro Bs 800.">
           <p class="avail-label">Disponible para asignar</p>
           <p class="avail-value">{{ format(available) }}</p>
           <ul class="basins">
@@ -94,15 +80,6 @@ onBeforeUnmount(() => cancelAnimationFrame(frame))
   position: relative;
   overflow: hidden;
   padding-block: clamp(3rem, 8vw, 6.5rem);
-}
-
-.contours {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.16;
-  pointer-events: none;
 }
 
 .grid {
@@ -150,18 +127,7 @@ onBeforeUnmount(() => cancelAnimationFrame(frame))
   border: 1px solid var(--line);
   border-radius: 28px;
   background: var(--surface);
-  box-shadow: 0 30px 60px -30px rgb(27 40 38 / 0.35);
-}
-
-.drops {
-  display: block;
-  width: 100%;
-  height: 3rem;
-  margin-top: -0.5rem;
-}
-
-.drop {
-  fill: var(--water);
+  box-shadow: 0 30px 60px -30px rgb(17 17 17 / 0.25);
 }
 
 .avail-label {
@@ -172,7 +138,7 @@ onBeforeUnmount(() => cancelAnimationFrame(frame))
 .avail-value {
   font-family: var(--display);
   font-size: clamp(2.4rem, 9vw, 3.2rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.1;
   letter-spacing: -0.02em;
   font-variant-numeric: tabular-nums;
@@ -205,40 +171,20 @@ onBeforeUnmount(() => cancelAnimationFrame(frame))
   margin-top: 0.4rem;
   overflow: hidden;
   border-radius: 999px;
-  background: var(--water-soft);
+  background: var(--accent-soft);
 }
 
 .fill {
   width: var(--w);
   height: 100%;
   border-radius: inherit;
-  background: var(--water);
+  background: var(--accent);
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .drop {
-    opacity: 0;
-    animation: fall 2.4s ease-in 0.2s 3 both;
-    animation-delay: var(--d);
-  }
-
   .fill {
     transform-origin: left;
     animation: rise 1.6s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d) both;
-  }
-
-  @keyframes fall {
-    0% {
-      opacity: 0;
-      translate: 0 -6px;
-    }
-    20% {
-      opacity: 0.9;
-    }
-    100% {
-      opacity: 0;
-      translate: 0 46px;
-    }
   }
 
   @keyframes rise {

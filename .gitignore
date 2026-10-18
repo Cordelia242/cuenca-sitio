@@ -18,3 +18,6 @@ _site/
 
 # Registro local del harness de agentes
 .atl/
+
+# Documentos de trabajo locales (no se publican)
+odd/

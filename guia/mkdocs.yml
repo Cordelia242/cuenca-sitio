@@ -8,6 +8,9 @@ edit_uri: edit/main/guia/docs/
 theme:
   name: material
   language: es
+  logo: assets/logo.svg
+  favicon: assets/favicon.svg
+  font: false
   features:
     - navigation.tabs
     - navigation.sections
@@ -20,15 +23,15 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: teal
-      accent: teal
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-night
         name: Cambiar a modo oscuro
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: teal
-      accent: teal
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-sunny
         name: Cambiar a modo claro
@@ -48,6 +51,12 @@ markdown_extensions:
       alternate_style: true
   - toc:
       permalink: true
+
+extra_css:
+  - stylesheets/marca.css
+
+extra_javascript:
+  - javascripts/marca.js
 
 extra:
   homepage: https://cordelia242.github.io/cuenca-sitio/

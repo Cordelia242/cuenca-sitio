@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <style>
+    .ink { stroke: #111111 }
+    @media (prefers-color-scheme: dark) { .ink { stroke: #fafafa } }
+  </style>
+  <path d="M18 64 Q34 58 50 64 T82 64 C79 77 66 86 50 86 C34 86 21 77 18 64 Z" fill="#1d7a46"/>
+  <g class="ink" fill="none" stroke-linecap="round">
+    <path d="M14 44 C14 68 30 86 50 86 C70 86 86 68 86 44" stroke-width="10"/>
+    <path d="M26 12 C26 32 44 38 46 54" stroke-width="9"/>
+    <path d="M50 8 L50 54" stroke-width="9"/>
+    <path d="M74 12 C74 32 56 38 54 54" stroke-width="9"/>
+  </g>
+</svg>

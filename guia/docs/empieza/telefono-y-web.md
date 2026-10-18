@@ -31,7 +31,8 @@ La mayoría de las funciones están en el teléfono y en la web. Estas son las d
 | Función | Teléfono | Web |
 |---|:---:|:---:|
 | Plan, movimientos y cuentas | ✓ | ✓ |
-| Movimientos programados y calendario | ✓ | ✓ |
+| Movimientos programados | ✓ | ✓ |
+| Calendario | — | ✓ |
 | Reportes | ✓ | ✓ |
 | Préstamos | ✓ | ✓ |
 | Espacios compartidos | ✓ | ✓ |

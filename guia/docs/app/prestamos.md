@@ -17,7 +17,7 @@ Cada préstamo usa un **perfil** que define sus reglas: cómo se calcula el inte
 No te asustes: no necesitas armar uno desde cero. Los perfiles están en **Perfiles de préstamo**, y en el **Marketplace** hay perfiles listos. Busca el que se parece a tu préstamo y toca **Usar perfil**. Si necesitas ajustar algo, usa **Personalizar**.
 
 !!! tip "¿Un préstamo entre amigos, sin interés?"
-    Crea un perfil sencillo con **Nuevo perfil de préstamo** y una tasa fija de 0 %. Lo puedes reutilizar para todos tus préstamos entre amigos. Mira la receta «Presté dinero a un amigo» en las guías rápidas.
+    Crea un perfil sencillo con **Nuevo perfil de préstamo** y una tasa fija de 0 %. Lo puedes reutilizar para todos tus préstamos entre amigos. Mira la receta [Presté dinero a un amigo](../recetas/preste-dinero-a-un-amigo.md).
 
 ## Crear un préstamo
 
@@ -28,6 +28,9 @@ No te asustes: no necesitas armar uno desde cero. Los perfiles están en **Perfi
 5. Escribe el **Monto del préstamo**, el **Número de cuotas** y la **Fecha de desembolso**.
 6. Toca **Simular préstamo** para ver las cuotas antes de crearlo.
 7. Si todo está bien, toca **Crear préstamo**.
+
+!!! note "El dinero del préstamo se registra aparte"
+    Crear el préstamo no registra el dinero que recibiste o que entregaste. Regístralo tú como un movimiento normal: un **Ingreso** si te prestaron, o un **Gasto** si prestaste.
 
 ## Ver un préstamo
 
@@ -54,7 +57,7 @@ Cuenca registra un gasto llamado, por ejemplo, "Cuota 4 de 12", cargado al presu
 2. Elige la cuenta donde recibiste el dinero.
 3. Guarda.
 
-Cuenca registra un ingreso como "Cobro de la cuota 2 de 5".
+Cuenca registra un ingreso como "Cobro de la cuota 2 de 5". Ese dinero entra en **Disponible para asignar**, listo para repartir.
 
 También puedes registrar un ingreso normal y elegir el préstamo en **Cobro de préstamo**.
 

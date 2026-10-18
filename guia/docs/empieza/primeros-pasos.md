@@ -123,4 +123,4 @@ El gasto se descuenta del presupuesto "Comida". En **Planes** verás cuánto te 
 ## ¿Y ahora?
 
 - Si quieres entender el método a fondo, sigue con [Presupuestar en el día a día](../presupuestar/index.md).
-- Si prefieres aprender la app por partes, ve a [Usar la app](../uso-diario/index.md).
+- Si prefieres aprender la app por partes, ve a [Usar la app](../app/index.md).

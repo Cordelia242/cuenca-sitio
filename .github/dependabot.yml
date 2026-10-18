@@ -1,0 +1,25 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /landing
+    schedule:
+      interval: weekly
+    groups:
+      landing:
+        patterns: ["*"]
+
+  - package-ecosystem: pip
+    directory: /guia
+    schedule:
+      interval: weekly
+    groups:
+      guia:
+        patterns: ["*"]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      actions:
+        patterns: ["*"]

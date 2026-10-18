@@ -14,13 +14,13 @@ Esta sección recorre Cuenca pantalla por pantalla. En cada página encontrarás
 
 ## Más funciones
 
-- Reportes y análisis
-- Espacios compartidos
-- Préstamos
-- El asistente
-- El reloj y los atajos
-- Herramientas de la web
-- Configuración y respaldo
+- [Reportes y análisis](reportes-y-analisis.md): tableros, gráficos y análisis de tu dinero.
+- [Espacios compartidos](espacios-compartidos.md): presupuesta con tu familia, tu pareja o tus compañeros de casa.
+- [Préstamos](prestamos.md): lo que debes y lo que te deben, cuota por cuota.
+- [El asistente](asistente.md): chat en la web y voz en el teléfono.
+- [El reloj y los atajos](reloj-y-atajos.md): registra con un toque o con la voz.
+- [Herramientas de la web](herramientas.md): reglas, duplicados, auditoría y atajos de teclado.
+- [Configuración y respaldo](configuracion-y-respaldo.md): tema, monedas, tu cuenta y tus respaldos.
 
 !!! tip "Pestañas de teléfono y web"
     Cuando un paso cambia entre el teléfono y la web, elige tu pestaña: **En el teléfono** o **En la web**. La guía recordará tu elección.

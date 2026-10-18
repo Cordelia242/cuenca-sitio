@@ -45,7 +45,7 @@ El **Resumen de la importación** te dice:
 Toca **Importar** (el botón dice cuántos movimientos son). Los movimientos llegan como **Pendiente**, listos para que les pongas presupuesto y los concilies.
 
 !!! tip "La web lo hace más fácil"
-    En la web, Cuenca adivina las columnas, recuerda cómo las elegiste para cada cuenta y aplica tus reglas para poner presupuesto y etiquetas solas.
+    En la web, Cuenca adivina las columnas, recuerda cómo las elegiste para cada cuenta y aplica tus [reglas](herramientas.md#reglas) para poner presupuesto y etiquetas solas.
 
 !!! warning "Si ves letras raras"
     Si las tildes o la ñ aparecen mal, el archivo tiene otra codificación. En la web elige **Windows-1252 (Excel en Windows)** en **Codificación del archivo**. En el teléfono, el archivo debe estar en UTF-8: ábrelo en una hoja de cálculo y guárdalo como "CSV UTF-8".
@@ -58,5 +58,5 @@ Toca **Importar** (el botón dice cuántos movimientos son). Los movimientos lle
 
 ## Otras importaciones
 
-- **Respaldo**: para pasar todos tus datos de un teléfono a otro, usa el respaldo, en la configuración.
+- **Respaldo**: para pasar todos tus datos de un teléfono a otro, usa el [respaldo](configuracion-y-respaldo.md#respaldo).
 - **Eventos de Google Calendar**: en el [Calendario](calendario.md).

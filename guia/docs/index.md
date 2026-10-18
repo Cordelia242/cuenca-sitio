@@ -1,5 +1,7 @@
 # Guía de Cuenca
 
+<p class="cuenca-lema">Todo tu dinero, en un mismo cauce.</p>
+
 Cuenca te ayuda a presupuestar tu día a día: decides qué hará cada boliviano antes de gastarlo y ves, mes a mes, si cumpliste tu plan.
 
 Esta guía está pensada para ti si nunca usaste Cuenca, o si nunca hiciste un presupuesto. Explica todo paso a paso, sin tecnicismos y con ejemplos en bolivianos.

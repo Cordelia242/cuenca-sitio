@@ -12,7 +12,7 @@ const features = [
   },
   {
     title: 'Movimientos y programadas',
-    text: 'Gastos, ingresos y transferencias, divididos entre presupuestos, con etiquetas; pagos que se repiten, en un calendario.',
+    text: 'Gastos, ingresos y transferencias, divididos entre presupuestos, con etiquetas; pagos que se repiten, con un calendario en la web.',
     icon: 'M4 7h13l-3-3M20 17H7l3 3M4 12h16',
   },
   {

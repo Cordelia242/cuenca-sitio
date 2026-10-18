@@ -18,7 +18,7 @@ Modo: no aplica (solo configuración y andamiaje, sin lógica). Las comprobacion
 - [x] T2 Guía MkDocs Material: `mkdocs.yml`, índice y 3 secciones de relleno, `requirements.txt` fijado (inline)
 - [x] T3 Workflows `publicar.yml` y `verificar.yml`, Dependabot, `.gitignore`, README (inline)
 - [x] T4 Verificación local: ambos builds y servir la salida combinada bajo `/cuenca-sitio/`
-- [ ] T5 Activar Pages (build type `workflow`) y abrir el PR
+- [x] T5 Activar Pages (build type `workflow`) y abrir el PR
 
 ## Criterios de aceptación
 PR abierto, ambos builds en verde en local, workflows presentes, Pages configurado para Actions, evidencia de la vista previa local.
@@ -28,6 +28,7 @@ PR abierto, ambos builds en verde en local, workflows presentes, Pages configura
 - T2: `mkdocs build --strict` OK. Commit 541554c.
 - T3: workflows, Dependabot, `.gitignore`, README. Commit en la rama: `ci: publicar en GitHub Pages y verificar builds en cada PR`.
 - T4: salida combinada servida con `python -m http.server` bajo `/cuenca-sitio/`: landing, assets, favicon, las 4 páginas de la guía, índice de búsqueda y sitemap responden 200; todos los recursos relativos de `/guia/` responden 200; canonical = `https://cordelia242.github.io/cuenca-sitio/guia/`.
+- T5: Pages activado con `build_type: workflow`; PR #1 abierto.
 
 ## Siguiente paso
-T5: activar Pages y abrir el PR.
+Revisión y merge del PR #1 por el coordinador; el merge dispara el primer despliegue. Pendiente: licencia y revisión nativa RDD (bloqueada por `managed_assets_outdated`).

@@ -1,0 +1,20 @@
+# Node / Vite
+node_modules/
+landing/dist/
+
+# Python / MkDocs
+.venv/
+__pycache__/
+guia/site/
+
+# Salida combinada local
+_site/
+
+# Editor y sistema
+.DS_Store
+.vscode/
+.idea/
+*.log
+
+# Registro local del harness de agentes
+.atl/

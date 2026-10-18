@@ -66,5 +66,14 @@ nav:
       - Gastos irregulares: presupuestar/gastos-irregulares.md
       - La rutina del mes: presupuestar/rutina-mensual.md
       - Ejemplos de la vida real: presupuestar/ejemplos.md
+  - Usar la app:
+      - app/index.md
+      - Inicio: app/inicio.md
+      - El plan: app/plan.md
+      - Movimientos: app/movimientos.md
+      - Movimientos programados: app/programadas.md
+      - Cuentas y tarjetas: app/cuentas-y-tarjetas.md
+      - Calendario: app/calendario.md
+      - Importar movimientos: app/importar.md
   - Uso diario: uso-diario/index.md
   - Preguntas frecuentes: preguntas/index.md

@@ -28,4 +28,4 @@ Presupuestar funciona cuando se vuelve un hábito. No necesitas horas: unos minu
 - Pregúntate: ¿qué presupuesto se quedó corto? ¿Cuál sobró? Ajusta tus metas para el próximo mes.
 
 !!! tip "Concilia tus cuentas"
-    Una vez al mes, compara el saldo de tu cuenta en Cuenca con el de tu banco y marca los movimientos como **Conciliado**. Así sabes que tus números son reales. Lo explicamos en la sección de movimientos de esta guía.
+    Una vez al mes, compara el saldo de tu cuenta en Cuenca con el de tu banco y marca los movimientos como **Conciliado**. Así sabes que tus números son reales. Lo explicamos en [Movimientos](../app/movimientos.md#conciliar-comparar-con-tu-banco).

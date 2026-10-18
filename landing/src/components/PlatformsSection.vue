@@ -53,7 +53,7 @@
           </svg>
           <h3>Cliente web para computadora</h3>
           <p>
-            Pensado para pantallas grandes y teclado, con paleta de comandos y atajos; para revisar el mes con calma.
+            Pensado para pantallas grandes y teclado, con paleta de comandos, atajos de teclado y calendario; para revisar el mes con calma.
             Requiere iniciar sesión con Google.
           </p>
         </article>

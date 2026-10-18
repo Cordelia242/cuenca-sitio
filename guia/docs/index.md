@@ -7,7 +7,7 @@ Cuenca te ayuda a presupuestar tu día a día. Esta guía explica, paso a paso y
 
 ## Por dónde empezar
 
-- [Primeros pasos](primeros-pasos/index.md): crea tu cuenta y tu primer presupuesto.
+- [Primeros pasos](empieza/primeros-pasos.md): crea tu cuenta y tu primer presupuesto.
 - [Uso diario](uso-diario/index.md): registra gastos e ingresos.
 - [Preguntas frecuentes](preguntas/index.md): respuestas rápidas a las dudas más comunes.
 

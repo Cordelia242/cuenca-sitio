@@ -13,6 +13,8 @@ theme:
     - navigation.sections
     - navigation.top
     - navigation.footer
+    - navigation.indexes
+    - content.tabs.link
     - search.suggest
     - search.highlight
   palette:
@@ -38,6 +40,10 @@ plugins:
 markdown_extensions:
   - admonition
   - attr_list
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
   - toc:
       permalink: true
 
@@ -46,6 +52,9 @@ extra:
 
 nav:
   - Inicio: index.md
-  - Primeros pasos: primeros-pasos/index.md
+  - Empieza aquí:
+      - empieza/index.md
+      - Teléfono y web: empieza/telefono-y-web.md
+      - Primeros pasos: empieza/primeros-pasos.md
   - Uso diario: uso-diario/index.md
   - Preguntas frecuentes: preguntas/index.md

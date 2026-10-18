@@ -127,4 +127,4 @@ En la web, **Exportar CSV** descarga tus movimientos en una hoja de cálculo: to
 
 - Registra en el momento. Si lo dejas para la noche, olvidarás la mitad.
 - Usa títulos cortos y repetidos ("Mercado", "Micro"): las sugerencias te ahorran tiempo.
-- Para los gastos que se repiten, usa [movimientos programados](programadas.md) o atajos.
+- Para los gastos que se repiten, usa [movimientos programados](programadas.md) o [atajos](reloj-y-atajos.md).

@@ -75,5 +75,12 @@ nav:
       - Cuentas y tarjetas: app/cuentas-y-tarjetas.md
       - Calendario: app/calendario.md
       - Importar movimientos: app/importar.md
+      - Reportes y análisis: app/reportes-y-analisis.md
+      - Espacios compartidos: app/espacios-compartidos.md
+      - Préstamos: app/prestamos.md
+      - El asistente: app/asistente.md
+      - El reloj y los atajos: app/reloj-y-atajos.md
+      - Herramientas de la web: app/herramientas.md
+      - Configuración y respaldo: app/configuracion-y-respaldo.md
   - Uso diario: uso-diario/index.md
   - Preguntas frecuentes: preguntas/index.md

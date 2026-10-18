@@ -22,7 +22,7 @@ Es Cuenca para la computadora, pensada para una pantalla grande.
 
 ## La app del reloj
 
-Si tienes un reloj con Wear OS conectado a tu teléfono, puedes registrar movimientos con la voz o con un toque usando atajos.
+Si tienes un reloj con Wear OS conectado a tu teléfono, puedes registrar movimientos con la voz o con un toque usando atajos. Lee más en [El reloj y los atajos](../app/reloj-y-atajos.md).
 
 ## Qué hay en cada una
 

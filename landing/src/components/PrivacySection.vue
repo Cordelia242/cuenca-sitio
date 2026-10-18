@@ -26,18 +26,25 @@ const points = [
       </div>
 
       <svg class="diagram" viewBox="0 -28 320 348" role="img" aria-label="Diagrama: tu dispositivo en el centro, con un anillo punteado opcional de sincronización" data-reveal>
-        <g fill="none" stroke="var(--water)" stroke-width="1.5" opacity="0.35">
+        <g fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0.35">
           <circle cx="160" cy="160" r="60" />
           <circle cx="160" cy="160" r="85" />
           <circle cx="160" cy="160" r="110" />
         </g>
-        <circle cx="160" cy="160" r="140" fill="none" stroke="var(--clay)" stroke-width="2" stroke-dasharray="3 9" stroke-linecap="round" />
+        <circle cx="160" cy="160" r="140" fill="none" stroke="var(--accent-text)" stroke-width="2" stroke-dasharray="3 9" stroke-linecap="round" />
         <rect x="132" y="120" width="56" height="80" rx="10" fill="var(--surface)" stroke="var(--ink)" stroke-width="2" />
-        <path d="M160 140c4 5 6 8 6 11a6 6 0 0 1-12 0c0-3 2-6 6-11z" fill="var(--water)" />
-        <path d="M148 168h24" stroke="var(--water)" stroke-width="3" stroke-linecap="round" />
-        <g font-family="system-ui, sans-serif" font-size="12" fill="var(--muted)" text-anchor="middle">
+        <g transform="translate(140 130) scale(0.4)">
+          <path d="M18 64 Q34 58 50 64 T82 64 C79 77 66 86 50 86 C34 86 21 77 18 64 Z" fill="var(--accent)" />
+          <g fill="none" stroke="var(--ink)" stroke-linecap="round" stroke-width="7">
+            <path d="M14 44 C14 68 30 86 50 86 C70 86 86 68 86 44" stroke-width="9" />
+            <path d="M26 12 C26 32 44 38 46 54" />
+            <path d="M50 8 L50 54" />
+            <path d="M74 12 C74 32 56 38 54 54" />
+          </g>
+        </g>
+        <g font-family="Outfit, system-ui, sans-serif" font-size="12" fill="var(--muted)" text-anchor="middle">
           <text x="160" y="226">Tu dispositivo</text>
-          <text x="160" y="-8" fill="var(--clay)">Sincronización (opcional)</text>
+          <text x="160" y="-8" fill="var(--accent-text)">Sincronización (opcional)</text>
         </g>
       </svg>
     </div>
@@ -80,7 +87,7 @@ const points = [
   width: 1.25rem;
   height: 1.25rem;
   margin-top: 0.3rem;
-  color: var(--water);
+  color: var(--accent-text);
 }
 
 .diagram {

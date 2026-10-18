@@ -81,14 +81,14 @@ const moments = [
   top: -0.6rem;
   right: -0.6rem;
   width: 5rem;
-  color: var(--water);
+  color: var(--accent-text);
   opacity: 0.5;
 }
 
 .moment h3 {
   position: relative;
   max-width: calc(100% - 3.25rem);
-  color: var(--clay);
+  color: var(--accent-text);
 }
 
 .moment p {

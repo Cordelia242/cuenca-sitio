@@ -26,7 +26,7 @@ import { appUrl, guideUrl } from '../links'
   padding: clamp(2.5rem, 7vw, 5rem) 1.5rem;
   border: 1px solid var(--line);
   border-radius: calc(var(--radius) * 1.6);
-  background: var(--water-soft);
+  background: var(--accent-soft);
   text-align: center;
 }
 

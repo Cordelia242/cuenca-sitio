@@ -38,7 +38,7 @@ Cuenca lo hace por ti:
 3. Esos Bs 400 pasan al presupuesto de la tarjeta, en el grupo **Pagos de tarjetas de crédito**.
 4. Cuando pagas la tarjeta (una transferencia desde tu banco a la tarjeta), usas ese dinero apartado.
 
-Así, el día del pago, el dinero ya está esperando. Mira la receta [Pagué la tarjeta](../uso-diario/index.md).
+Así, el día del pago, el dinero ya está esperando. Mira la receta [Pagué la tarjeta](../recetas/pague-la-tarjeta.md).
 
 !!! warning "Deuda anterior"
     Si tu tarjeta ya tenía deuda cuando la agregaste a Cuenca, su presupuesto de pago dirá **Le falta dinero**. Asígnale dinero poco a poco hasta cubrir esa deuda.

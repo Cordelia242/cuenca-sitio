@@ -82,5 +82,16 @@ nav:
       - El reloj y los atajos: app/reloj-y-atajos.md
       - Herramientas de la web: app/herramientas.md
       - Configuración y respaldo: app/configuracion-y-respaldo.md
+  - Guías rápidas:
+      - recetas/index.md
+      - Recibí mi sueldo: recetas/recibi-mi-sueldo.md
+      - Pagué la tarjeta: recetas/pague-la-tarjeta.md
+      - Presté dinero a un amigo: recetas/preste-dinero-a-un-amigo.md
+      - Ahorrar para un viaje: recetas/ahorrar-para-un-viaje.md
+      - Gasté de más: recetas/gaste-de-mas.md
+      - Se viene un gasto anual: recetas/gasto-anual.md
+      - Tuve una emergencia: recetas/cubrir-una-emergencia.md
+      - Compartir los gastos de la casa: recetas/compartir-gastos-en-casa.md
+      - Empieza un mes nuevo: recetas/cambio-de-mes.md
   - Uso diario: uso-diario/index.md
   - Preguntas frecuentes: preguntas/index.md

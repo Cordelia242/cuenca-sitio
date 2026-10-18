@@ -40,6 +40,8 @@ plugins:
 markdown_extensions:
   - admonition
   - attr_list
+  - def_list
+  - md_in_html
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.tabbed:
@@ -93,5 +95,5 @@ nav:
       - Tuve una emergencia: recetas/cubrir-una-emergencia.md
       - Compartir los gastos de la casa: recetas/compartir-gastos-en-casa.md
       - Empieza un mes nuevo: recetas/cambio-de-mes.md
-  - Uso diario: uso-diario/index.md
-  - Preguntas frecuentes: preguntas/index.md
+  - Preguntas frecuentes: preguntas-frecuentes.md
+  - Glosario: glosario.md

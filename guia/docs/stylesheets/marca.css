@@ -111,7 +111,8 @@
 /* Clips de la guía: grabaciones del teléfono que acompañan a los pasos. */
 .clip {
   position: relative;
-  max-width: 18rem;
+  /* 27vh de ancho con proporción 9:20 limita el alto a ~60% de la pantalla. */
+  max-width: min(12rem, 27vh);
   margin: 1em auto;
 }
 

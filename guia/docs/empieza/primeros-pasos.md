@@ -53,6 +53,14 @@ Una **cuenta** es un lugar donde tienes dinero: tu billetera, tu cuenta del banc
     5. En **Saldo inicial**, escribe cuánto tiene hoy esa cuenta.
     6. Toca **Crear cuenta**.
 
+    <figure class="clip">
+      <video autoplay muted loop playsinline preload="metadata" width="324" height="720" poster="../../videos/primera-cuenta.jpg" aria-label="En el teléfono: crear la cuenta Billetera, de tipo Efectivo, con Bs 800 de saldo inicial.">
+        <source src="../../videos/primera-cuenta.webm" type="video/webm">
+        <source src="../../videos/primera-cuenta.mp4" type="video/mp4">
+      </video>
+      <figcaption>En el teléfono: crear la cuenta Billetera, de tipo Efectivo, con Bs 800 de saldo inicial.</figcaption>
+    </figure>
+
 === "En la web"
 
     1. En el menú lateral, abre **Cuentas**.
@@ -81,6 +89,14 @@ Cuando cobras tu sueldo, lo registras como un **Ingreso**.
     5. Elige la **Cuenta** donde entró el dinero.
     6. Toca **Guardar**.
 
+    <figure class="clip">
+      <video autoplay muted loop playsinline preload="metadata" width="324" height="720" poster="../../videos/registrar-sueldo.jpg" aria-label="En el teléfono: registrar un sueldo de Bs 4.000 en Disponible para asignar.">
+        <source src="../../videos/registrar-sueldo.webm" type="video/webm">
+        <source src="../../videos/registrar-sueldo.mp4" type="video/mp4">
+      </video>
+      <figcaption>En el teléfono: registrar un sueldo de Bs 4.000 en Disponible para asignar.</figcaption>
+    </figure>
+
 === "En la web"
 
     1. En **Inicio**, toca **Registrar movimiento**. En **Movimientos** también puedes pulsar la tecla **N**.
@@ -100,6 +116,14 @@ Ahora viene lo más importante: darle un trabajo a cada boliviano.
     4. Repite con los demás presupuestos.
     5. Confirma con el botón **Asignar** de abajo.
 
+    <figure class="clip">
+      <video autoplay muted loop playsinline preload="metadata" width="324" height="720" poster="../../videos/asignar-el-sueldo.jpg" aria-label="En el teléfono: repartir el sueldo entre Alquiler, Comida y Transporte desde Planes → Asignar.">
+        <source src="../../videos/asignar-el-sueldo.webm" type="video/webm">
+        <source src="../../videos/asignar-el-sueldo.mp4" type="video/mp4">
+      </video>
+      <figcaption>En el teléfono: repartir el sueldo entre Alquiler, Comida y Transporte desde Planes → Asignar.</figcaption>
+    </figure>
+
 === "En la web"
 
     1. En el menú lateral, abre **Plan**.
@@ -117,6 +141,14 @@ Cuando **Disponible para asignar** llega a cero, verás **Todo asignado**. Ya ti
 2. Deja **Gasto**, escribe el monto y el título, por ejemplo "Mercado".
 3. En **¿Para qué es?**, elige "Comida".
 4. Elige la cuenta con la que pagaste y guarda.
+
+<figure class="clip">
+  <video autoplay muted loop playsinline preload="metadata" width="324" height="720" poster="../../videos/registrar-gasto.jpg" aria-label="En el teléfono: registrar un gasto de Bs 85,50 en Comida, pagado con la Billetera.">
+    <source src="../../videos/registrar-gasto.webm" type="video/webm">
+    <source src="../../videos/registrar-gasto.mp4" type="video/mp4">
+  </video>
+  <figcaption>En el teléfono: registrar un gasto de Bs 85,50 en Comida, pagado con la Billetera.</figcaption>
+</figure>
 
 El gasto se descuenta del presupuesto "Comida". En **Planes** verás cuánto te queda disponible.
 

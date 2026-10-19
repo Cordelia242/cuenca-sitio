@@ -20,6 +20,14 @@ En el teléfono, la pestaña **Movimientos** muestra todos tus movimientos. En l
     6. Elige la **Cuenta**.
     7. Toca **Guardar**.
 
+    <figure class="clip">
+      <video autoplay muted loop playsinline preload="metadata" width="324" height="720" poster="../../videos/registrar-gasto.jpg" aria-label="En el teléfono: registrar un gasto de Bs 85,50 en Comida, pagado con la Billetera.">
+        <source src="../../videos/registrar-gasto.webm" type="video/webm">
+        <source src="../../videos/registrar-gasto.mp4" type="video/mp4">
+      </video>
+      <figcaption>En el teléfono: registrar un gasto de Bs 85,50 en Comida, pagado con la Billetera.</figcaption>
+    </figure>
+
 === "En la web"
 
     1. En **Inicio**, toca **Registrar movimiento**, o pulsa la tecla **N** en **Movimientos**.
@@ -47,6 +55,14 @@ Una transferencia mueve dinero entre tus cuentas. No es un gasto ni un ingreso, 
 3. Escribe el monto y un título, como "Retiro del cajero".
 4. Guarda.
 
+<figure class="clip">
+  <video autoplay muted loop playsinline preload="metadata" width="324" height="720" poster="../../videos/transferir-entre-cuentas.jpg" aria-label="En el teléfono: transferir Bs 300 del Banco a la Billetera.">
+    <source src="../../videos/transferir-entre-cuentas.webm" type="video/webm">
+    <source src="../../videos/transferir-entre-cuentas.mp4" type="video/mp4">
+  </video>
+  <figcaption>En el teléfono: transferir Bs 300 del Banco a la Billetera.</figcaption>
+</figure>
+
 Pagar tu tarjeta de crédito también es una transferencia. Lo explicamos en [Cuentas y tarjetas](cuentas-y-tarjetas.md#pagar-la-tarjeta).
 
 ## Dividir un gasto entre presupuestos
@@ -61,6 +77,14 @@ A veces una sola compra tiene varios propósitos. En el supermercado compras com
 3. En cada parte elige un presupuesto y un monto. Usa **Agregar parte** para sumar más.
 4. Cuenca te dice si te falta o te sobra por repartir. Con **Ajustar**, el total pasa a ser la suma de las partes.
 5. Guarda.
+
+<figure class="clip">
+  <video autoplay muted loop playsinline preload="metadata" width="324" height="720" poster="../../videos/dividir-un-gasto.jpg" aria-label="En el teléfono: dividir un gasto de Bs 500 entre Comida, Mantenimiento del hogar y Ocio y salidas.">
+    <source src="../../videos/dividir-un-gasto.webm" type="video/webm">
+    <source src="../../videos/dividir-un-gasto.mp4" type="video/mp4">
+  </video>
+  <figcaption>En el teléfono: dividir un gasto de Bs 500 entre Comida, Mantenimiento del hogar y Ocio y salidas.</figcaption>
+</figure>
 
 Una parte también puede ir a **otra cuenta** con **Enviar a otra cuenta**. En ese caso, Cuenca crea sola el ingreso en esa cuenta. Para cambiarlo o eliminarlo, edita el movimiento dividido.
 

@@ -107,3 +107,43 @@
 .md-typeset h1 {
   color: var(--md-typeset-color);
 }
+
+/* Clips de la guía: grabaciones del teléfono que acompañan a los pasos. */
+.clip {
+  position: relative;
+  max-width: 18rem;
+  margin: 1em auto;
+}
+
+.clip video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 20;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 1rem;
+  background: var(--md-default-fg-color--lightest);
+}
+
+.clip figcaption {
+  font-size: 0.75rem;
+}
+
+.clip__reproducir {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.6em 1.2em;
+  border-radius: 999px;
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.clip__reproducir:focus-visible {
+  outline: 2px solid var(--md-accent-fg-color);
+  outline-offset: 2px;
+}

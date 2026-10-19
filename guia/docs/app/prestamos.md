@@ -48,6 +48,16 @@ Toca un préstamo para ver:
 
 Cuenca registra un gasto llamado, por ejemplo, "Cuota 4 de 12", cargado al presupuesto propio del préstamo. El monto, la fecha y el presupuesto los pone el préstamo. Puedes cambiar la cuenta, el título, las notas y las etiquetas.
 
+También puedes pagarla desde el formulario de movimiento: toca **+** y, en **¿Para qué es?**, elige el presupuesto del préstamo. Cuenca completa la cuota igual que con **Pagar cuota**.
+
+<figure class="clip">
+  <video autoplay muted loop playsinline preload="metadata" width="324" height="720" poster="../../videos/pagar-una-cuota.jpg" aria-label="En el teléfono: pagar la cuota 1 de 12 de un préstamo eligiendo su presupuesto en ¿Para qué es?.">
+    <source src="../../videos/pagar-una-cuota.webm" type="video/webm">
+    <source src="../../videos/pagar-una-cuota.mp4" type="video/mp4">
+  </video>
+  <figcaption>En el teléfono: pagar la cuota 1 de 12 de un préstamo eligiendo su presupuesto en ¿Para qué es?.</figcaption>
+</figure>
+
 !!! warning "Cómo anular un pago"
     El pago de una cuota no se borra desde **Movimientos**. Si te equivocaste, abre el préstamo y usa **Anular**. Solo puedes anular el último pago.
 

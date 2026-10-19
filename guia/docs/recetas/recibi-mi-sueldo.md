@@ -13,6 +13,14 @@ Te depositaron **Bs 5.000**. Antes de gastar un solo boliviano, dale un trabajo 
     4. Lo que te queda para gustos: salidas, ropa.
 4. **Llega a cero.** Cuando veas **Todo asignado**, terminaste.
 
+<figure class="clip">
+  <video autoplay muted loop playsinline preload="metadata" width="324" height="720" poster="../../videos/asignar-el-sueldo.jpg" aria-label="En el teléfono: repartir el sueldo entre Alquiler, Comida y Transporte desde Planes → Asignar.">
+    <source src="../../videos/asignar-el-sueldo.webm" type="video/webm">
+    <source src="../../videos/asignar-el-sueldo.mp4" type="video/mp4">
+  </video>
+  <figcaption>En el teléfono: repartir el sueldo entre Alquiler, Comida y Transporte desde Planes → Asignar.</figcaption>
+</figure>
+
 !!! tip "Más rápido"
     Si tus presupuestos tienen metas, usa **Completar metas**. Si tus meses se parecen, usa **Auto-asignar el mes** con **Asignado el mes pasado**.
 

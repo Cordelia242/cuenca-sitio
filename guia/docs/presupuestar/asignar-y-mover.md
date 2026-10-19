@@ -11,6 +11,14 @@ Puedes asignar de a uno o varios a la vez. Cuenca también te ayuda con atajos:
 - **Completar metas**: completa de una vez todos los presupuestos que tienen meta.
 - **Auto-asignar el mes**: reparte según una regla, por ejemplo **Asignado el mes pasado** o **Promedio gastado**. Antes de aplicar, te muestra cómo quedaría.
 
+<figure class="clip">
+  <video autoplay muted loop playsinline preload="metadata" width="324" height="720" poster="../../videos/asignar-el-sueldo.jpg" aria-label="En el teléfono: repartir el sueldo entre Alquiler, Comida y Transporte desde Planes → Asignar.">
+    <source src="../../videos/asignar-el-sueldo.webm" type="video/webm">
+    <source src="../../videos/asignar-el-sueldo.mp4" type="video/mp4">
+  </video>
+  <figcaption>En el teléfono: repartir el sueldo entre Alquiler, Comida y Transporte desde Planes → Asignar.</figcaption>
+</figure>
+
 !!! tip "Empieza por lo urgente"
     Si el dinero no alcanza para todo, asigna primero lo que no puede esperar: vivienda, comida, servicios, transporte y las cuotas de deudas. Lo demás, después.
 

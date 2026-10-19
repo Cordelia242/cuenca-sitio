@@ -109,10 +109,11 @@
 }
 
 /* Clips de la guía: grabaciones del teléfono que acompañan a los pasos. */
-.clip {
+/* .md-typeset sube la especificidad sobre `.md-typeset figure { max-width: 100% }` de Material. */
+.md-typeset .clip {
   position: relative;
-  /* 27vh de ancho con proporción 9:20 limita el alto a ~60% de la pantalla. */
-  max-width: min(12rem, 27vh);
+  /* 22vh de ancho con proporción 9:20 limita el alto a ~50% de la pantalla. */
+  max-width: min(10rem, 22vh);
   margin: 1em auto;
 }
 

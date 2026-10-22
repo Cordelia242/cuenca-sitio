@@ -6,6 +6,54 @@ const plans = [
   { name: 'Autohospedado', summary: 'Cuenca en tu propio servidor', soon: true },
 ]
 
+// Summary cards shown above the table; the featured one is highlighted as best value.
+const cards = [
+  {
+    id: 'gratis',
+    name: 'Gratis',
+    audience: 'Para presupuestar en tu teléfono, sin cuenta',
+    price: 'Sin costo',
+    status: 'Disponible',
+    features: [
+      'La app en tu teléfono',
+      'Funciona sin cuenta ni internet',
+      'Tus datos se quedan en tu teléfono',
+    ],
+  },
+  {
+    id: 'individual',
+    name: 'Individual',
+    audience: 'Para tener tus cuentas en todos tus dispositivos',
+    price: 'Precio por anunciar',
+    status: 'Próximamente',
+    featured: true,
+    why: 'Incluye la sincronización, tu espacio Personal y 5 espacios más, y el web completo.',
+    features: [
+      'Sincronización entre tus dispositivos',
+      'Tu espacio Personal y 5 espacios más',
+      'Acceso completo al web',
+      'Comparte espacios con personas que tienen su suscripción',
+      'Prueba gratis de un mes',
+    ],
+  },
+  {
+    id: 'compartido',
+    name: 'Compartido',
+    audience: 'Para compartir un espacio con tu pareja, tu familia o tus amistades',
+    price: 'Precio por anunciar, por espacio',
+    status: 'Próximamente',
+    features: [
+      'Un espacio compartido con hasta 5 personas',
+      'Solo paga quien contrata el espacio',
+      'Cada persona sincroniza también su Personal',
+      'Web del espacio compartido',
+      'Se puede tener junto con el Individual',
+    ],
+  },
+]
+
+const checkIcon = 'M5 12.5l4.5 4.5L19 7.5'
+
 // One entry per table row; `values` follows the order of `plans`.
 const rows = [
   {
@@ -60,7 +108,7 @@ const rows = [
     values: [
       'No vence',
       'Dejan de sincronizar; el web queda en solo lectura con exportación y los datos se conservan 30 días en la nube',
-      'Si quien paga tiene un Individual o una prueba vigente, el espacio vuelve a sus 5 espacios; si no, se pausa para todas las personas. Los datos se conservan 30 días',
+      'Si quien paga tiene un Individual vigente (la prueba gratis cuenta), el espacio vuelve al cupo de su Individual; si no, se pausa para todas las personas. Los datos se conservan 30 días',
       'No vence. Las copias de seguridad son tuyas',
     ],
   },
@@ -96,7 +144,7 @@ const faqs = [
   },
   {
     q: '¿Qué pasa cuando vence mi plan?',
-    a: 'Tus espacios dejan de sincronizar y el web queda en solo lectura, con la opción de exportar tus datos. Los datos en la nube de Cuenca se conservan 30 días y la copia de tu teléfono no se toca. Si vence un Compartido y quien paga tiene un Individual o una prueba vigente, el espacio vuelve a contar entre sus 5 espacios; si no, el espacio se pausa para todas las personas.',
+    a: 'Tus espacios dejan de sincronizar y el web queda en solo lectura, con la opción de exportar tus datos. Los datos en la nube de Cuenca se conservan 30 días y la copia de tu teléfono no se toca. Si vence un Compartido y quien paga tiene un Individual vigente (la prueba gratis cuenta como Individual vigente), el espacio vuelve al cupo de su Individual; si no tiene un Individual vigente, el espacio se pausa para todas las personas.',
   },
   {
     q: '¿Puedo tener el Individual y el Compartido a la vez?',
@@ -129,6 +177,43 @@ const faqs = [
         </p>
       </div>
 
+      <ul class="cards">
+        <li v-for="(card, i) in cards" :key="card.id" data-reveal :style="{ '--i': i }">
+          <article
+            class="plan-card"
+            :class="{ featured: card.featured }"
+            :aria-labelledby="card.featured ? `plan-${card.id} plan-${card.id}-badge` : `plan-${card.id}`"
+          >
+            <p v-if="card.featured" :id="`plan-${card.id}-badge`" class="best">Mejor valor</p>
+            <h3 :id="`plan-${card.id}`">{{ card.name }}</h3>
+            <p class="audience">{{ card.audience }}</p>
+            <p class="price">{{ card.price }}</p>
+            <p class="status">{{ card.status }}</p>
+            <p v-if="card.why" class="why">{{ card.why }}</p>
+            <ul class="features">
+              <li v-for="feature in card.features" :key="feature">
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path :d="checkIcon" />
+                </svg>
+                <span>{{ feature }}</span>
+              </li>
+            </ul>
+          </article>
+        </li>
+      </ul>
+
+      <aside class="selfhost" aria-labelledby="plan-autohospedado" data-reveal>
+        <div>
+          <h3 id="plan-autohospedado">Autohospedado</h3>
+          <p>
+            Instala Cuenca en tu propio servidor, gratis y sin límite de personas. Tú te encargas del servidor: copias de
+            seguridad, actualizaciones y seguridad.
+          </p>
+        </div>
+        <p class="status">Próximamente</p>
+      </aside>
+
+      <h3 class="compare-title" data-reveal>Compara los planes en detalle</h3>
       <div
         class="table-wrap"
         role="region"
@@ -188,8 +273,197 @@ const faqs = [
   border-block: 1px solid var(--line);
 }
 
+.cards {
+  display: grid;
+  gap: 1.25rem;
+  margin: 3rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 860px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+  }
+}
+
+.cards > li {
+  display: flex;
+}
+
+.plan-card {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.75rem 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.plan-card.featured {
+  border: 2px solid var(--accent);
+  background: color-mix(in srgb, var(--accent-soft) 45%, var(--surface));
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent),
+    0 18px 40px -24px rgb(0 0 0 / 0.35);
+}
+
+/* Subgrid lines up badge, name, price, status and features across the three cards. */
+@media (min-width: 860px) {
+  .cards {
+    grid-template-rows: repeat(7, auto);
+    row-gap: 0;
+  }
+
+  .cards > li,
+  .plan-card {
+    display: grid;
+    grid-row: span 7;
+    grid-template-rows: subgrid;
+  }
+
+  .best {
+    grid-row: 1;
+  }
+
+  .plan-card h3 {
+    grid-row: 2;
+  }
+
+  .audience {
+    grid-row: 3;
+  }
+
+  .price {
+    grid-row: 4;
+  }
+
+  .plan-card .status {
+    grid-row: 5;
+  }
+
+  .why {
+    grid-row: 6;
+  }
+
+  .features {
+    grid-row: 7;
+  }
+
+  .plan-card.featured {
+    transform: translateY(-0.5rem);
+  }
+}
+
+.best {
+  align-self: flex-start;
+  justify-self: start;
+  margin-bottom: 0.75rem;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.plan-card h3 {
+  font-size: 1.6rem;
+}
+
+.audience {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.price {
+  margin-top: 1.25rem;
+  font-family: var(--display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.status {
+  align-self: flex-start;
+  justify-self: start;
+  margin-top: 1rem;
+  padding: 0.35rem 0.9rem;
+  border: 1.5px solid var(--muted);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.why {
+  margin-top: 1rem;
+  color: var(--accent-text);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.features {
+  display: grid;
+  align-content: start;
+  gap: 0.6rem;
+  margin: 1.25rem 0 0;
+  padding: 1.25rem 0 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+  font-size: 0.97rem;
+}
+
+.features li {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.features svg {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.15rem;
+  color: var(--accent-text);
+}
+
+.selfhost {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  margin-top: 1.25rem;
+  padding: 1.5rem;
+  border: 1px dashed var(--muted);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.selfhost h3 {
+  font-size: 1.3rem;
+}
+
+.selfhost p:not(.status) {
+  max-width: 62ch;
+  margin-top: 0.4rem;
+  color: var(--muted);
+}
+
+.selfhost .status {
+  margin-top: 0;
+}
+
+.compare-title {
+  margin-top: 4rem;
+  font-size: clamp(1.4rem, 2vw + 0.8rem, 1.9rem);
+}
+
 .table-wrap {
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   overflow-x: auto;
   border: 1px solid var(--line);
   border-radius: var(--radius);

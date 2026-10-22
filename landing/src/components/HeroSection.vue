@@ -50,7 +50,7 @@ onBeforeUnmount(() => cancelAnimationFrame(frame))
           <a class="btn btn-primary" :href="appUrl">Abrir Cuenca</a>
           <a class="btn btn-ghost" :href="guideUrl">Lee la guía</a>
         </div>
-        <p class="note">App para Android y cliente web para computadora.</p>
+        <p class="note">App para Android y cliente web para computadora. <a href="#planes">Mira los planes</a>.</p>
       </div>
 
       <figure class="device">

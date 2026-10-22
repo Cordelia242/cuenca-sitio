@@ -1,12 +1,19 @@
 <script setup lang="ts">
+// Mirrors `PLAN_FAMILIAR` in the cuenca repository. Informative only: purchase is not available yet and, once the
+// app sells through Google Play and the App Store, the store price is the one that applies.
+const PLAN_FAMILIAR = { moneda: 'USD', montoMensual: 3, personas: 5 } as const
+
+const precioFamiliar = `${PLAN_FAMILIAR.moneda} ${PLAN_FAMILIAR.montoMensual} al mes`
+const personasFamiliar = `hasta ${PLAN_FAMILIAR.personas} personas`
+const invitadasFamiliar = PLAN_FAMILIAR.personas - 1
+
 const plans = [
   { name: 'Gratis', summary: 'La app en tu teléfono, sin cuenta' },
-  { name: 'Individual', summary: 'Tus espacios en todos tus dispositivos' },
-  { name: 'Compartido', summary: 'Un espacio para hasta 5 personas' },
+  { name: 'Familiar', summary: `Un espacio compartido para ${personasFamiliar}` },
   { name: 'Autohospedado', summary: 'Cuenca en tu propio servidor', soon: true },
 ]
 
-// Summary cards shown above the table; the featured one is highlighted as best value.
+// Summary cards shown above the table.
 const cards = [
   {
     id: 'gratis',
@@ -21,33 +28,17 @@ const cards = [
     ],
   },
   {
-    id: 'individual',
-    name: 'Individual',
-    audience: 'Para tener tus cuentas en todos tus dispositivos',
-    price: 'Precio por anunciar',
+    id: 'familiar',
+    name: 'Familiar',
+    audience: 'Para compartir las cuentas de la casa con tu pareja o tu familia',
+    price: precioFamiliar,
     status: 'Próximamente',
-    featured: true,
-    why: 'Incluye la sincronización, tu espacio Personal y 5 espacios más, y el web completo.',
+    why: `Para ${personasFamiliar}, contando a quien paga. Solo paga una.`,
     features: [
-      'Sincronización entre tus dispositivos',
-      'Tu espacio Personal y 5 espacios más',
-      'Acceso completo al web',
-      'Comparte espacios con personas que tienen su suscripción',
-      'Prueba gratis de un mes',
-    ],
-  },
-  {
-    id: 'compartido',
-    name: 'Compartido',
-    audience: 'Para compartir un espacio con tu pareja, tu familia o tus amistades',
-    price: 'Precio por anunciar, por espacio',
-    status: 'Próximamente',
-    features: [
-      'Un espacio compartido con hasta 5 personas',
-      'Solo paga quien contrata el espacio',
-      'Cada persona sincroniza también su Personal',
-      'Web del espacio compartido',
-      'Se puede tener junto con el Individual',
+      `Un espacio compartido en la nube para ${personasFamiliar}`,
+      'Cada persona sincroniza también su espacio Personal',
+      'Sincronización entre los dispositivos de cada persona',
+      `Quien paga invita a hasta ${invitadasFamiliar} personas, que no pagan`,
     ],
   },
 ]
@@ -58,57 +49,41 @@ const checkIcon = 'M5 12.5l4.5 4.5L19 7.5'
 const rows = [
   {
     label: 'Precio',
-    values: ['Gratis', 'Precio por anunciar', 'Precio por anunciar, por espacio', 'Gratis. Pagas tu propio servidor'],
+    values: ['Gratis', `${precioFamiliar}. Precio anual por definir`, 'Gratis. Pagas tu propio servidor'],
   },
   {
     label: 'Dónde se guardan tus datos',
-    values: ['Solo en tu teléfono', 'En la nube de Cuenca', 'En la nube de Cuenca', 'En tu servidor'],
+    values: ['Solo en tu teléfono', 'En la nube de Cuenca', 'En tu servidor'],
   },
   {
     label: 'Sincronización entre dispositivos',
-    values: ['No', 'Sí', 'Sí, del espacio compartido y del Personal de cada persona', 'Sí, con tu servidor'],
+    values: ['No', 'Sí, del espacio compartido y del Personal de cada persona', 'Sí, con tu servidor'],
   },
   {
     label: 'Espacios sincronizados',
     values: [
       'Ninguno',
-      'Tu Personal y 5 espacios más. Los espacios de otras personas a los que te unes no cuentan',
-      'El espacio compartido y el Personal de cada persona. No ocupa uno de los 5 espacios del Individual de quien paga',
+      'Un único espacio compartido y el Personal de cada persona. Los demás espacios quedan en el teléfono',
       'Sin límite',
     ],
   },
   {
+    label: 'Personas',
+    values: ['Una, en su teléfono', `Hasta ${PLAN_FAMILIAR.personas}, incluida quien paga. Solo paga una`, 'Sin límite'],
+  },
+  {
     label: 'Acceso al web',
-    values: ['No', 'Sí, completo', 'Sí, solo al espacio compartido. El Personal se usa en la app', 'Sí, el web de tu servidor'],
-  },
-  {
-    label: 'Compartir espacios',
-    values: [
-      'No',
-      'Sí, con personas que también tienen su propia suscripción',
-      'Sí, ese espacio, con hasta 5 personas además de quien paga',
-      'Sí, con las personas de tu servidor',
-    ],
-  },
-  {
-    label: 'Quién necesita suscripción',
-    values: [
-      'Nadie',
-      'Tú y cada persona con la que compartes',
-      'Solo quien paga el espacio. Cada persona invitada ocupa un lugar, aunque ya tenga su Individual',
-      'Nadie',
-    ],
+    values: ['No', 'Sí. Qué espacios ve cada persona está por definir', 'Sí, el web de tu servidor'],
   },
   {
     label: 'Prueba gratis',
-    values: ['No aplica', 'Un mes', 'No tiene', 'No aplica'],
+    values: ['No aplica', 'Por definir', 'No aplica'],
   },
   {
     label: 'Al vencer',
     values: [
       'No vence',
-      'Dejan de sincronizar; el web queda en solo lectura con exportación y los datos se conservan 30 días en la nube',
-      'Si quien paga tiene un Individual vigente (la prueba gratis cuenta), el espacio vuelve al cupo de su Individual; si no, se pausa para todas las personas. Los datos se conservan 30 días',
+      'El espacio compartido deja de sincronizar para todas las personas; el web queda en solo lectura con exportación y los datos se conservan 30 días en la nube',
       'No vence. Las copias de seguridad son tuyas',
     ],
   },
@@ -116,24 +91,19 @@ const rows = [
 
 const scenarios = [
   {
-    title: 'Una persona sola',
-    plan: 'Gratis o Individual',
-    text: 'Sin pagar, Ana usa la app en su teléfono y todo queda guardado ahí, sin web. Si contrata el Individual, su Personal y hasta 5 espacios más se sincronizan en todos sus dispositivos y en el web completo.',
+    title: 'Una persona sola, sin pagar',
+    plan: 'Gratis',
+    text: 'Ana usa la app en su teléfono y todo queda guardado ahí. No sincroniza con otros dispositivos ni tiene web.',
   },
   {
-    title: 'Una pareja en la que ambas personas pagan el Individual',
-    plan: 'Dos Individual',
-    text: 'Beto y Carla tienen cada uno su Individual. Beto comparte el espacio «Casa» con Carla: para Beto, «Casa» es uno de sus 5 espacios; para Carla no cuenta, porque es de Beto. Ambos tienen el web completo.',
+    title: 'Una pareja',
+    plan: 'Un Familiar',
+    text: `Carla paga el Familiar y comparte «Casa» con Diego, que no paga. Cada uno sincroniza «Casa» y su propio Personal. Ocupan 2 de los ${PLAN_FAMILIAR.personas} lugares.`,
   },
   {
-    title: 'Una pareja en la que solo una persona paga',
-    plan: 'Un Compartido',
-    text: 'Dana contrata el Compartido para «Casa» e invita a Eli, que no paga. Cada uno sincroniza «Casa» y su propio Personal, y en el web ambos ven solo «Casa». Eli ocupa 1 de los 5 lugares.',
-  },
-  {
-    title: 'Una persona invitada sin suscripción',
-    plan: 'Invitada a un Compartido',
-    text: 'Fabi no paga nada y se une al espacio «Viaje», que su amiga cubre con un Compartido. Sincroniza «Viaje» y su Personal, y en el web ve solo «Viaje». Si el plan de su amiga vence, «Viaje» queda en solo lectura para Fabi y los datos se conservan 30 días.',
+    title: 'Una familia de cinco',
+    plan: 'Un Familiar',
+    text: `Elena paga el Familiar y comparte «Familia» con su pareja, sus dos hijos y su madre. Cada persona sincroniza «Familia» y su Personal. Son ${PLAN_FAMILIAR.personas} de ${PLAN_FAMILIAR.personas}: para sumar a una sexta persona, alguien tiene que salir.`,
   },
 ]
 
@@ -143,12 +113,12 @@ const faqs = [
     a: 'Nada cambia en tu día a día: la app es gratuita y funciona en tu teléfono sin cuenta ni internet. Tus datos se quedan solo en ese teléfono; no se sincronizan con otros dispositivos ni tienes acceso al web.',
   },
   {
-    q: '¿Qué pasa cuando vence mi plan?',
-    a: 'Tus espacios dejan de sincronizar y el web queda en solo lectura, con la opción de exportar tus datos. Los datos en la nube de Cuenca se conservan 30 días y la copia de tu teléfono no se toca. Si vence un Compartido y quien paga tiene un Individual vigente (la prueba gratis cuenta como Individual vigente), el espacio vuelve al cupo de su Individual; si no tiene un Individual vigente, el espacio se pausa para todas las personas.',
+    q: '¿Quién paga el Familiar?',
+    a: `Solo una persona. Quien paga invita a hasta ${invitadasFamiliar} personas más, que no pagan. Comparten un único espacio y cada persona sincroniza además su espacio Personal, que nunca se comparte.`,
   },
   {
-    q: '¿Puedo tener el Individual y el Compartido a la vez?',
-    a: 'Sí. Son dos planes distintos. Un espacio cubierto por el Compartido no ocupa uno de los 5 espacios de tu Individual.',
+    q: '¿Qué pasa cuando vence el Familiar?',
+    a: 'El espacio compartido deja de sincronizar para todas las personas y el web queda en solo lectura, con la opción de exportar los datos. Los datos en la nube de Cuenca se conservan 30 días y las copias de los teléfonos no se tocan.',
   },
   {
     q: '¿Puedo mezclar espacios en la nube de Cuenca y en mi propio servidor?',
@@ -159,8 +129,8 @@ const faqs = [
     a: 'Próximamente. Se ofrecerá gratis, como imágenes Docker del web y del servidor, sin límite de personas. Quien lo instala se encarga del servidor: copias de seguridad, actualizaciones y seguridad.',
   },
   {
-    q: '¿Cuánto costarán los planes?',
-    a: 'Los precios del Individual y del Compartido están por anunciar. La app gratuita seguirá siendo gratuita.',
+    q: '¿Cuánto cuesta el Familiar?',
+    a: `${precioFamiliar}, para ${personasFamiliar} contando a quien paga. Por ahora el precio es informativo: todavía no se puede comprar. Cuando se venda en Google Play y en la App Store, el precio vigente será el de cada tienda. La app gratuita seguirá siendo gratuita.`,
   },
 ]
 </script>
@@ -173,18 +143,14 @@ const faqs = [
         <h2 id="planes-title">Elige cómo usar Cuenca</h2>
         <p class="lede">
           La app es gratis y funciona en tu teléfono. Si quieres tus datos en varios dispositivos, en el web o compartidos
-          con otras personas, elige un plan. Los precios están por anunciar.
+          con tu familia, elige el plan Familiar: {{ precioFamiliar }} para {{ personasFamiliar }}. El precio es informativo:
+          todavía no se puede comprar y, cuando se venda en las tiendas, el precio vigente será el de cada tienda.
         </p>
       </div>
 
       <ul class="cards">
         <li v-for="(card, i) in cards" :key="card.id" data-reveal :style="{ '--i': i }">
-          <article
-            class="plan-card"
-            :class="{ featured: card.featured }"
-            :aria-labelledby="card.featured ? `plan-${card.id} plan-${card.id}-badge` : `plan-${card.id}`"
-          >
-            <p v-if="card.featured" :id="`plan-${card.id}-badge`" class="best">Mejor valor</p>
+          <article class="plan-card" :aria-labelledby="`plan-${card.id}`">
             <h3 :id="`plan-${card.id}`">{{ card.name }}</h3>
             <p class="audience">{{ card.audience }}</p>
             <p class="price">{{ card.price }}</p>
@@ -283,7 +249,7 @@ const faqs = [
 
 @media (min-width: 860px) {
   .cards {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     align-items: stretch;
   }
 }
@@ -302,71 +268,43 @@ const faqs = [
   background: var(--surface);
 }
 
-.plan-card.featured {
-  border: 2px solid var(--accent);
-  background: color-mix(in srgb, var(--accent-soft) 45%, var(--surface));
-  box-shadow:
-    0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent),
-    0 18px 40px -24px rgb(0 0 0 / 0.35);
-}
-
-/* Subgrid lines up badge, name, price, status and features across the three cards. */
+/* Subgrid lines up name, price, status and features across the cards. */
 @media (min-width: 860px) {
   .cards {
-    grid-template-rows: repeat(7, auto);
+    grid-template-rows: repeat(6, auto);
     row-gap: 0;
   }
 
   .cards > li,
   .plan-card {
     display: grid;
-    grid-row: span 7;
+    grid-row: span 6;
     grid-template-rows: subgrid;
   }
 
-  .best {
+  .plan-card h3 {
     grid-row: 1;
   }
 
-  .plan-card h3 {
+  .audience {
     grid-row: 2;
   }
 
-  .audience {
+  .price {
     grid-row: 3;
   }
 
-  .price {
+  .plan-card .status {
     grid-row: 4;
   }
 
-  .plan-card .status {
+  .why {
     grid-row: 5;
   }
 
-  .why {
+  .features {
     grid-row: 6;
   }
-
-  .features {
-    grid-row: 7;
-  }
-
-  .plan-card.featured {
-    transform: translateY(-0.5rem);
-  }
-}
-
-.best {
-  align-self: flex-start;
-  justify-self: start;
-  margin-bottom: 0.75rem;
-  padding: 0.2rem 0.75rem;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--on-accent);
-  font-size: 0.8rem;
-  font-weight: 600;
 }
 
 .plan-card h3 {
@@ -472,7 +410,7 @@ const faqs = [
 
 table {
   width: 100%;
-  min-width: 52rem;
+  min-width: 44rem;
   border-collapse: collapse;
   font-size: 0.95rem;
   line-height: 1.5;
@@ -498,11 +436,11 @@ tbody tr:last-child > * {
 }
 
 thead th {
-  width: 20%;
+  width: 25%;
 }
 
 .corner {
-  width: 20%;
+  width: 25%;
 }
 
 /* Keeps the row labels visible while the table scrolls sideways. */

@@ -2,7 +2,7 @@
 
 Sitio público de [Cuenca](https://cuenca.symm3try.net), la app para presupuestar el día a día. Incluye:
 
-- **Página de la app** (`landing/`): hecha con Vite, Vue 3 y TypeScript. Incluye la sección **Planes** (`#planes`), con la comparación de los planes, ejemplos y preguntas frecuentes; es solo informativa y no muestra precios.
+- **Página de la app** (`landing/`): hecha con Vite, Vue 3 y TypeScript. Incluye la sección **Planes** (`#planes`), con la comparación de los planes, ejemplos y preguntas frecuentes; muestra el plan Familiar a USD 3 al mes como precio informativo (todavía no se puede comprar; el precio vigente será el de cada tienda).
 - **Guía de uso** (`guia/`): guía para personas usuarias, hecha con MkDocs Material.
 
 Se publica en GitHub Pages: <https://cordelia242.github.io/cuenca-sitio/> (la guía está en `/guia/`).

@@ -8,6 +8,7 @@ const links = [
   { href: '#plataformas', label: 'Teléfono y web' },
   { href: '#privacidad', label: 'Privacidad' },
   { href: '#como-funciona', label: 'Cómo funciona' },
+  { href: '#planes', label: 'Planes' },
 ]
 </script>
 

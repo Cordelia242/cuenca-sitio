@@ -6,6 +6,7 @@ import FeaturesSection from './components/FeaturesSection.vue'
 import PlatformsSection from './components/PlatformsSection.vue'
 import PrivacySection from './components/PrivacySection.vue'
 import HowItWorksSection from './components/HowItWorksSection.vue'
+import PlansSection from './components/PlansSection.vue'
 import CtaSection from './components/CtaSection.vue'
 import SiteFooter from './components/SiteFooter.vue'
 import { useReveal } from './composables/useReveal'
@@ -23,6 +24,7 @@ useReveal()
     <PlatformsSection />
     <PrivacySection />
     <HowItWorksSection />
+    <PlansSection />
     <CtaSection />
   </main>
   <SiteFooter />

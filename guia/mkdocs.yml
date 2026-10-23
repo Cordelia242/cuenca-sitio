@@ -1,7 +1,7 @@
 site_name: Guía de Cuenca
 site_description: Guía de uso de Cuenca para presupuestar el día a día.
-# The guide is published under the landing, at the Pages project subpath.
-site_url: https://cordelia242.github.io/cuenca-sitio/guia/
+# The guide is published under the landing, at cuenca.app/guia/.
+site_url: https://cuenca.app/guia/
 repo_url: https://github.com/Cordelia242/cuenca-sitio
 edit_uri: edit/main/guia/docs/
 
@@ -62,7 +62,7 @@ extra_javascript:
   - javascripts/marca.js
 
 extra:
-  homepage: https://cordelia242.github.io/cuenca-sitio/
+  homepage: https://cuenca.app/
 
 nav:
   - Inicio: index.md

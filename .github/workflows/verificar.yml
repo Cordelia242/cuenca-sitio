@@ -38,6 +38,7 @@ jobs:
         with:
           persist-credentials: false
 
+      # Intentional release gate: fails until the owner's data replaces the policy placeholders.
       - name: Rechazar marcadores pendientes en la política de privacidad
         run: scripts/verificar-marcadores.sh
 

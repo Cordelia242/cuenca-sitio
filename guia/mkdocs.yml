@@ -36,6 +36,9 @@ theme:
         icon: material/weather-sunny
         name: Cambiar a modo claro
 
+validation:
+  anchors: warn
+
 plugins:
   - search:
       lang: es

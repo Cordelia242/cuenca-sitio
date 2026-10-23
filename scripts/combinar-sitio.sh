@@ -40,7 +40,8 @@ if [ -n "$large" ]; then
 fi
 
 # A rule is a line that starts with a URL (not indented and not a comment).
-rules=$(grep -cE '^(/|https://)' _site/_headers)
+# grep -c exits 1 when it counts zero rules; keep set -e from aborting without a message.
+rules=$(grep -cE '^(/|https://)' _site/_headers || true)
 if [ "$rules" -gt "$max_header_rules" ]; then
   echo "::error::_headers tiene $rules reglas; Cloudflare Pages admite $max_header_rules."
   exit 1

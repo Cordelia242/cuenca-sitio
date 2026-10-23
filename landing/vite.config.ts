@@ -1,9 +1,9 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
-// GitHub Pages serves this project under /cuenca-sitio/, so every asset URL needs that prefix.
+// The landing is served at the root of cuenca.app, so asset URLs start at /.
 // https://vite.dev/config/shared-options.html#base
 export default defineConfig({
-  base: '/cuenca-sitio/',
+  base: '/',
   plugins: [vue()],
 })

@@ -30,4 +30,4 @@ Esta guía está pensada para ti si nunca usaste Cuenca, o si nunca hiciste un p
 
 ¿Tienes una duda puntual? Mira las [Preguntas frecuentes](preguntas-frecuentes.md) o el [Glosario](glosario.md).
 
-¿Quieres probarla ya? [Abre la app](https://cuenca.symm3try.net).
+¿Quieres probarla ya? [Abre la app](https://panel.cuenca.app).

@@ -125,7 +125,7 @@ El informe no incluye tu identidad de usuario. Antes de enviarlo, la app tambié
 
 ### Datos técnicos de seguridad
 
-Para frenar los intentos de acceso abusivos, guardamos durante 15 minutos una versión cifrada en una sola vía (no reversible) de tu dirección IP.
+Para frenar los intentos de acceso abusivos, guardamos durante 15 minutos una huella de tu dirección IP: un código que se calcula a partir de ella y del que no se puede recuperar la dirección.
 
 No usamos cookies de publicidad ni de seguimiento.
 

@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import { privacyPolicyUrl } from '../links'
+
 const points = [
   'Tus datos se guardan en tu dispositivo y funciona sin conexión.',
   'Para uso personal no necesitas cuenta.',
   'Si inicias sesión (con Google), tus espacios se sincronizan entre dispositivos.',
   'Tu clave de Gemini se queda en tu dispositivo y solo se envía a Google.',
-  'Los reportes de errores son anónimos —nunca incluyen montos, títulos, notas ni nombres— y puedes desactivarlos.',
+  'Los reportes de errores vienen desactivados. Si los activas, se envían sin tu identidad y sin montos, títulos, notas ni nombres.',
   'Puedes ver y cerrar sesiones en otros dispositivos, y borrar tu cuenta.',
 ]
 </script>
@@ -23,6 +25,7 @@ const points = [
             <span>{{ p }}</span>
           </li>
         </ul>
+        <p class="policy"><a :href="privacyPolicyUrl">Lee la política de privacidad</a></p>
       </div>
 
       <svg class="diagram" viewBox="0 -28 320 348" role="img" aria-label="Diagrama: tu dispositivo en el centro, con un anillo punteado opcional de sincronización" data-reveal>
@@ -88,6 +91,15 @@ const points = [
   height: 1.25rem;
   margin-top: 0.3rem;
   color: var(--accent-text);
+}
+
+.policy {
+  margin-top: 2rem;
+}
+
+.policy a {
+  color: var(--accent-text);
+  font-weight: 600;
 }
 
 .diagram {

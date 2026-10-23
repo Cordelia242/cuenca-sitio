@@ -5,7 +5,7 @@ const points = [
   'Tus datos se guardan en tu dispositivo y funciona sin conexión.',
   'Para uso personal no necesitas cuenta.',
   'Si inicias sesión (con Google), tus espacios se sincronizan entre dispositivos.',
-  'Tu clave de Gemini se queda en tu dispositivo y solo se envía a Google.',
+  'La clave del asistente (Gemini, OpenAI o Claude) se queda en tu dispositivo y solo se envía a ese proveedor.',
   'Los reportes de errores son opcionales y vienen desactivados. Si los activas, se envían sin tu identidad y se filtran para quitar montos, títulos, notas y nombres.',
   'Puedes ver y cerrar sesiones en otros dispositivos, y borrar tu cuenta.',
 ]

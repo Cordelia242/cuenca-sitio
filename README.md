@@ -57,14 +57,15 @@ El servidor de Python no aplica `_headers` ni la página 404. Para probarlos sin
 
 ## Configuración inicial de Cloudflare (una sola vez)
 
-Estos pasos los hace la persona dueña de la cuenta, en este orden. Ningún workflow los hace.
+Ya están hechos: el proyecto de Pages `cuenca-sitio`, con la rama de producción `main`, y el dominio personalizado `cuenca.app` con su `CNAME`. Al crearlo no se tocaron los registros `MX` ni `TXT` de Email Routing, y no hay que tocarlos en ningún cambio del sitio.
 
-1. **Proyecto de Pages.** En el panel de Cloudflare, *Workers & Pages* > *Create application* > pestaña *Pages* > subir archivos (*Direct Upload*, no la conexión con Git). Nombre: `cuenca-sitio` (el workflow usa ese nombre). Rama de producción: `main`. Si pide archivos, sube el `_site/` de una salida combinada local.
-2. **Dominio personalizado.** En el proyecto, *Custom domains* > *Set up a domain* > `cuenca.app`. La zona `cuenca.app` debe estar en la misma cuenta.
-3. **DNS.** Cloudflare propone crear el registro `CNAME cuenca.app → cuenca-sitio.pages.dev` (con proxy; en el apex se aplana). Acéptalo desde ese asistente; no lo crees a mano antes, porque da error 522. Si ya existen registros `A`, `AAAA` o `CNAME` en el apex (`@`) que apuntan a otro lado (por ejemplo, a GitHub Pages), borra solo esos. **No toques los registros de Email Routing**: los `MX` del apex, el `TXT` de SPF (`v=spf1 …`), el `TXT` de DKIM (`…._domainkey`) ni el de `_dmarc` si existe. Tampoco los de `panel` ni `api`. En el apex, Cloudflare aplana el `CNAME`, así que convive con esos `MX` y `TXT`. Si el panel se negara a crearlo por un conflicto con ellos, detente: no borres registros de correo para resolverlo. Si la zona tiene registros `CAA`, deben permitir a Let's Encrypt, Google Trust Services (`pki.goog`) y SSL.com.
-4. **Token de API.** *Manage account* > *Account API Tokens* > *Create Token* > *Custom token*. Un solo permiso: *Account* · *Cloudflare Pages* · *Edit*, limitado a esta cuenta. Sin permisos de zona ni de DNS.
-5. **Secretos en GitHub.** En el repo, *Settings* > *Environments* > *New environment* `production`. En *Deployment branches and tags*, elige *Selected branches and tags* y agrega solo `main`. Agrega los secretos del entorno (no del repo) `CLOUDFLARE_API_TOKEN` (el token del paso 4) y `CLOUDFLARE_ACCOUNT_ID` (está en la página de la cuenta o de la zona, en *API*).
-6. **Primera publicación.** El merge a `main` lanza `publicar.yml`. Si falló porque faltaba algo de lo anterior, vuelve a lanzarlo en *Actions* > *Publicar* > *Run workflow* sobre `main`. Comprueba <https://cuenca.app/> y <https://cuenca.app/guia/privacidad/>.
+La rama de producción se configura en el proyecto de Pages (panel de Cloudflare > *Workers & Pages* > `cuenca-sitio` > *Settings*). Debe coincidir con el `--branch=main` de `publicar.yml`: un deploy con otra rama queda como vista previa, no en `cuenca.app`. Si cambia una, hay que cambiar la otra.
+
+Quedan estos pasos, que hace la persona dueña de las cuentas en este orden. Ningún workflow los hace:
+
+1. **Token de API.** *Manage account* > *Account API Tokens* > *Create Token* > *Custom token*. Un solo permiso: *Account* · *Cloudflare Pages* · *Edit*, limitado a esta cuenta. Sin permisos de zona ni de DNS.
+2. **Secretos en GitHub.** En el repo, *Settings* > *Environments* > *New environment* `production`. En *Deployment branches and tags*, elige *Selected branches and tags* y agrega solo `main`. Agrega los secretos del entorno (no del repo) `CLOUDFLARE_API_TOKEN` (el token del paso 1) y `CLOUDFLARE_ACCOUNT_ID` (está en la página de la cuenta o de la zona, en *API*).
+3. **Primera publicación.** El merge a `main` lanza `publicar.yml`. Si falló porque faltaba algo de lo anterior, vuelve a lanzarlo en *Actions* > *Publicar* > *Run workflow* sobre `main`. Comprueba <https://cuenca.app/> y <https://cuenca.app/guia/privacidad/>.
 
 ## Retiro de GitHub Pages
 

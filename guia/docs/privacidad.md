@@ -12,9 +12,9 @@ En resumen:
 
 ## Quién es el responsable
 
-El responsable de los datos es **[NOMBRE DEL RESPONSABLE]**, con residencia en **[PAIS]**.
+El responsable de los datos es **Jose Armando Vargas**, con residencia en **[PAIS]**.
 
-Para cualquier consulta sobre privacidad, o para ejercer tus derechos, escribe a **[CORREO DE CONTACTO]**.
+Para cualquier consulta sobre privacidad, o para ejercer tus derechos, escribe a [**josearmandovargas65@gmail.com**](mailto:josearmandovargas65@gmail.com).
 
 ## Qué datos tratamos y para qué
 
@@ -184,7 +184,7 @@ Ningún sistema es infalible. Si ocurre un incidente de seguridad que afecte tus
 
 Si compartes un espacio tuyo con otras personas, antes de eliminar tu cuenta tienes que sacarlas o salir de ese espacio.
 
-**Por correo:** si no puedes usar la app, escribe a **[CORREO DE CONTACTO]** desde el correo de tu cuenta de Cuenca y pide que la eliminemos. Para proteger tu cuenta, verificaremos que la solicitud es tuya.
+**Por correo:** si no puedes usar la app, escribe a [**josearmandovargas65@gmail.com**](mailto:josearmandovargas65@gmail.com) desde el correo de tu cuenta de Cuenca y pide que la eliminemos. Para proteger tu cuenta, verificaremos que la solicitud es tuya.
 
 Eliminar tu cuenta **no cancela tu plan de Google Play**. Cancélalo en Google Play para que no se renueve.
 
@@ -196,7 +196,7 @@ Puedes:
 - **Llevártelos**: exporta un respaldo en JSON o una hoja de cálculo en CSV.
 - **Borrarlos**: borra movimientos, espacios o tu cuenta completa.
 - **Retirar tu consentimiento**: desconecta Google Calendar, quita la clave del asistente o apaga los reportes de errores.
-- **Pedirnos información** sobre tus datos, o ejercer cualquier otro derecho que te dé la ley de tu país, escribiendo a **[CORREO DE CONTACTO]**.
+- **Pedirnos información** sobre tus datos, o ejercer cualquier otro derecho que te dé la ley de tu país, escribiendo a [**josearmandovargas65@gmail.com**](mailto:josearmandovargas65@gmail.com).
 
 Respondemos en un plazo máximo de 30 días. También puedes reclamar ante la autoridad de protección de datos de tu país.
 

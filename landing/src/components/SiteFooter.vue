@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import BrandMark from './BrandMark.vue'
-import { appUrl, guideUrl } from '../links'
+import { appUrl, guideUrl, privacyPolicyUrl } from '../links'
 
 const year = new Date().getFullYear()
 const repoUrl = 'https://github.com/Cordelia242/cuenca-sitio'
@@ -20,6 +20,7 @@ const repoUrl = 'https://github.com/Cordelia242/cuenca-sitio'
         <ul>
           <li><a :href="appUrl">Abrir Cuenca</a></li>
           <li><a :href="guideUrl">Guía de uso</a></li>
+          <li><a :href="privacyPolicyUrl">Política de privacidad</a></li>
           <li><a :href="repoUrl">Código del sitio</a></li>
         </ul>
       </nav>

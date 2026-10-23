@@ -4,6 +4,7 @@ Sitio público de [Cuenca](https://cuenca.symm3try.net), la app para presupuesta
 
 - **Página de la app** (`landing/`): hecha con Vite, Vue 3 y TypeScript. Incluye la sección **Planes** (`#planes`), con la comparación de los planes, ejemplos y preguntas frecuentes; muestra el plan Familiar a USD 3 al mes como precio informativo (todavía no se puede comprar; el precio vigente será el de cada tienda).
 - **Guía de uso** (`guia/`): guía para personas usuarias, hecha con MkDocs Material.
+- **Política de privacidad** (`guia/docs/privacidad.md`): página pública de la guía en `/guia/privacidad/`, enlazada desde el pie de la página y desde la sección Privacidad. Es la URL que se declara en Google Play.
 
 Se publica en GitHub Pages: <https://cordelia242.github.io/cuenca-sitio/> (la guía está en `/guia/`).
 
@@ -50,4 +51,5 @@ Abre <http://localhost:8000/cuenca-sitio/>.
 
 - Cada push a `main` ejecuta el workflow [`publicar.yml`](.github/workflows/publicar.yml). Construye la página y la guía, las combina y las despliega en GitHub Pages. También se puede lanzar a mano desde la pestaña *Actions*.
 - Cada pull request ejecuta [`verificar.yml`](.github/workflows/verificar.yml), que construye ambas partes. La guía se construye con `--strict`, así que un enlace roto hace fallar el PR antes del merge.
+- Los dos workflows ejecutan [`scripts/verificar-marcadores.sh`](scripts/verificar-marcadores.sh), que falla si la política de privacidad todavía tiene marcadores como `[CORREO DE CONTACTO]`.
 - Dependabot propone cada semana actualizaciones agrupadas de npm, pip y GitHub Actions.

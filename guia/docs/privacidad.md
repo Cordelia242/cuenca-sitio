@@ -12,7 +12,7 @@ En resumen:
 
 ## Quién es el responsable
 
-El responsable de los datos es **Jose Armando Vargas**, con residencia en **[PAIS]**.
+El responsable de los datos es **Jose Armando Vargas**, con residencia en **Bolivia**.
 
 Para cualquier consulta sobre privacidad, o para ejercer tus derechos, escribe a [**josearmandovargas65@gmail.com**](mailto:josearmandovargas65@gmail.com).
 

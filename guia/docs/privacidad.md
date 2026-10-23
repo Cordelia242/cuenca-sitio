@@ -119,13 +119,15 @@ Si los activas y la app falla, se envía un informe técnico a Sentry, nuestro p
 - El error y la parte del código donde ocurrió.
 - El modelo del dispositivo, la versión del sistema y la versión de la app.
 
-El informe no incluye tu identidad de usuario. Antes de enviarlo, la app también quita los campos con montos, títulos, notas, nombres, saldos, correos y tokens. Aun así, el texto de un error podría incluir por accidente parte de un dato; por eso los reportes son opcionales.
+El informe no incluye tu identidad de usuario. Antes de enviarlo, la app quita los campos sensibles de los datos adjuntos, como montos, títulos, notas, nombres, saldos, correos y tokens. El texto del error no se filtra, así que podría incluir por accidente parte de un dato; por eso los reportes son opcionales.
 
 **Para qué:** solo para encontrar y corregir errores.
 
 ### Datos técnicos de seguridad
 
 Para frenar los intentos de acceso abusivos, guardamos durante 15 minutos una huella de tu dirección IP: un código que se calcula a partir de ella y del que no se puede recuperar la dirección.
+
+Además, nuestro proveedor de red (Cloudflare) y nuestro servidor pueden conservar registros de conexión, como la dirección IP y la hora de cada solicitud, para operar el servicio y protegerlo.
 
 No usamos cookies de publicidad ni de seguimiento.
 
@@ -169,7 +171,7 @@ Ningún sistema es infalible. Si ocurre un incidente de seguridad que afecte tus
 - **Cuenta y sesiones**: mientras tu cuenta exista. Cada sesión, hasta que la cierras o vence.
 - **Espacios en la nube**: hasta que borras el espacio o eliminas tu cuenta. Si quieres conservar un espacio solo en tu dispositivo y quitar su copia de la nube, escríbenos.
 - **Datos del plan**: mientras tu cuenta exista.
-- **Copias de seguridad del servidor**, si las hay: hasta 30 días después de que un dato se borra.
+- **Copias de seguridad del servidor**: si se habilitan, un dato borrado desaparece de ellas cuando vencen, tras un plazo razonable.
 - **Constancias de pago**: no se borran (lee [Constancias de pago de préstamos](#constancias-de-pago-de-prestamos)).
 - **Dirección IP para seguridad**: 15 minutos.
 

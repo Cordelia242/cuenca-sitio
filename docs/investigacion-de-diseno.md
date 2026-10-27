@@ -75,7 +75,7 @@ decisiones de estilo y de movimiento que salieron de ella. La investigación se 
   `#6B6B6B`, `#111111` y sus equivalentes oscuros), la acción principal en tinta (botón negro en claro, casi blanco en
   oscuro) y el **ámbar** como único acento: el punto de los rótulos de sección, la palabra destacada del titular, las
   barras de progreso y la barra de lectura. El verde y el rojo solo aparecen donde la app los usa, en montos de
-  ingreso y gasto.
+  ingreso y gasto, y en el agua del logotipo, que conserva su verde como en la app.
 - **Tipografía**: *Instrument Serif* para titulares (voz editorial del sitio), *Inter* para el texto y *Space Grotesk*
   para cifras, botones y títulos de producto (las dos fuentes de la app). Las tres se sirven desde el propio sitio con
   Fontsource, con fuentes del sistema como respaldo.

@@ -47,7 +47,10 @@ const tabs: { id: string; label: string; icon: IconName }[] = [
   border: 0.5em solid var(--header-surface);
   border-radius: 3em;
   background: var(--bg);
-  box-shadow: var(--shadow-float);
+  /* The outer ring separates the dark frame from a dark page. */
+  box-shadow:
+    0 0 0 1px var(--line-strong),
+    var(--shadow-float);
   font-family: var(--font-body);
   font-size: var(--phone-fs, 14px);
   line-height: 1.35;

@@ -1,15 +1,19 @@
 <script setup lang="ts">
+import { onMounted, ref } from 'vue'
 import AppIcon from './mock/AppIcon.vue'
 import { useTheme } from '../composables/useTheme'
 
 const { theme, toggle } = useTheme()
+// The toggle needs JS; until the page is interactive it keeps its space but stays hidden, so nothing shifts.
+const ready = ref(false)
+onMounted(() => (ready.value = true))
 </script>
 
 <template>
   <button
     type="button"
     class="toggle"
-    :class="theme"
+    :class="[theme, { ready }]"
     :aria-label="theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'"
     @click="toggle"
   >
@@ -36,9 +40,8 @@ const { theme, toggle } = useTheme()
     transform var(--dur-3) var(--ease-out);
 }
 
-/* The toggle needs JS; without it the theme follows the system. */
-:global(html:not(.js)) .toggle {
-  display: none;
+.toggle:not(.ready) {
+  visibility: hidden;
 }
 
 .toggle:hover {

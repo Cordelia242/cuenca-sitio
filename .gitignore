@@ -1,6 +1,7 @@
 # Node / Vite
 node_modules/
 landing/dist/
+landing/dist-ssr/
 
 # Python / MkDocs
 .venv/

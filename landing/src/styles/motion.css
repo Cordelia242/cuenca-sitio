@@ -1,0 +1,106 @@
+/*
+ * Motion utilities. Every rule is progressive enhancement: content is visible without JS and without animation.
+ * - `.enter`: load choreography (CSS only, runs once). Delay in ms via `--d`.
+ * - `[data-reveal]`: scroll reveal. JS adds `.is-revealing` when an element that started below the fold enters
+ *   the viewport; nothing is hidden beforehand. Stagger index via `--i`.
+ * - Scroll-linked effects use scroll-driven animations inside `@supports`; elsewhere they are static.
+ * With `prefers-reduced-motion: reduce`, entrances and reveals become a short fade and scroll-linked effects are off.
+ */
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+.enter {
+  animation: enter var(--dur-slow) var(--ease-out) calc(var(--d, 0) * 1ms) both;
+}
+
+[data-reveal].is-revealing {
+  animation: reveal var(--dur-reveal) var(--ease-out) calc(var(--i, 0) * var(--stagger)) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .enter,
+  [data-reveal].is-revealing {
+    animation: fade var(--dur-3) linear both;
+  }
+}
+
+/* Reading progress under the header. */
+@keyframes progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Gentle parallax: the element drifts against the scroll while it crosses the viewport. */
+@keyframes drift {
+  from {
+    transform: translateY(var(--drift, 40px));
+  }
+  to {
+    transform: translateY(calc(var(--drift, 40px) * -1));
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .parallax {
+      animation: drift linear both;
+      animation-timeline: view();
+    }
+  }
+}
+
+/* Theme toggle: the new theme grows as a circle from the toggle (View Transitions). */
+@keyframes theme-reveal {
+  from {
+    clip-path: circle(0 at var(--vt-x) var(--vt-y));
+  }
+  to {
+    clip-path: circle(var(--vt-r) at var(--vt-x) var(--vt-y));
+  }
+}
+
+html.theme-transition::view-transition-old(root),
+html.theme-transition::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+html.theme-transition::view-transition-new(root) {
+  animation: theme-reveal 640ms var(--ease-in-out);
+}
+
+/* Cross-document navigation (site <-> guide): a short fade. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: var(--dur-3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}

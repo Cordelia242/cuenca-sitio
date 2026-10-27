@@ -1,0 +1,195 @@
+/*
+ * Design tokens of the site. Values come from the app's design system ("Saldo"):
+ * cuenca/src/compartido/ui/tokens.ts (GRIS, AMBAR, SEMANTIC, radios, tipografia) and
+ * web/src/compartido/diseno/tokens.css. Components consume only these variables; no literal colours elsewhere.
+ *
+ * Theme: light by default, dark from `prefers-color-scheme` unless the visitor chose a theme with the toggle,
+ * which sets `data-theme` on <html>. The dark block is repeated for both cases.
+ */
+
+:root {
+  color-scheme: light;
+
+  /* Surfaces (GRIS) */
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --sunken: #f1f1f1;
+  --soft: #ededed;
+  --line: #e4e4e4;
+  --line-strong: #bdbdbd;
+
+  /* Text */
+  --ink: #111111;
+  --ink-2: #555555;
+  --muted: #6b6b6b;
+
+  /* Primary action: ink, as in the app (black button, white label) */
+  --primary: #111111;
+  --primary-hover: #333333;
+  --on-primary: #ffffff;
+
+  /* Dark header surface: always dark, also in dark mode (app's `fondoEncabezado`) */
+  --header-surface: #111111;
+  --on-header: #fafafa;
+  --on-header-muted: #a1a1a1;
+
+  /* Amber accent: text-safe ink (>= 4.5:1 on light surfaces), chart fill and soft background */
+  --amber: #935400;
+  --amber-fill: #b8770a;
+  --amber-soft: #f6ead4;
+
+  /* Money semantics */
+  --income: #1d7a46;
+  --income-soft: #e0f0e6;
+  --expense: #b93426;
+  --transfer: #3e6a8f;
+
+  /* Icon tiles (app's group colours: soft background + ink) */
+  --tile-green-bg: #e3f6ea;
+  --tile-green: #12733c;
+  --tile-blue-bg: #e7f0fe;
+  --tile-blue: #2559c2;
+  --tile-yellow-bg: #fdf5d8;
+  --tile-yellow: #8a6100;
+  --tile-violet-bg: #f1e9fd;
+  --tile-violet: #7a3db8;
+  --tile-neutral-bg: #f1f1f1;
+  --tile-neutral: #555555;
+
+  /* Shadows of the app */
+  --shadow-card: 0 4px 16px rgb(0 0 0 / 0.06);
+  --shadow-raised: 0 8px 24px rgb(0 0 0 / 0.12);
+  --shadow-float: 0 40px 80px -32px rgb(0 0 0 / 0.28);
+
+  /* Radii of the app: sm 10, md 16 (controls), lg 20 (cards), xl 28 (panels), pill */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  /* Spacing of the app (4 px base) */
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s5: 20px;
+  --s6: 24px;
+  --s7: 32px;
+  --s8: 40px;
+  --s9: 48px;
+  --s10: 64px;
+
+  /* Type: the app's scale for product UI, plus a fluid editorial scale for the site */
+  --font-display: 'Instrument Serif', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --font-body: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-ui: 'Space Grotesk Variable', 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --text-xs: 12px;
+  --text-sm: 13px;
+  --text-md: 16px;
+  --text-h5: 19px;
+  --text-h3: 24px;
+  --text-h1: 31px;
+  --text-display: 44px;
+  --step-hero: clamp(3rem, 6.4vw + 1rem, 6.75rem);
+  --step-section: clamp(2.4rem, 4vw + 1rem, 4.25rem);
+  --step-lead: clamp(1.08rem, 0.5vw + 0.95rem, 1.25rem);
+
+  /*
+   * Motion language. One easing family: a strong ease-out (quint) for entrances and hovers, a symmetric in-out for state changes.
+   * Micro-interactions 120–240 ms; scroll reveals 500–900 ms; stagger 70 ms.
+   */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-1: 120ms;
+  --dur-2: 180ms;
+  --dur-3: 240ms;
+  --dur-reveal: 700ms;
+  --dur-slow: 900ms;
+  --stagger: 70ms;
+
+  /* Layout */
+  --container: 1200px;
+  --gutter: clamp(16px, 4vw, 40px);
+  --header-h: 4rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --bg: #0a0a0a;
+    --surface: #141414;
+    --sunken: #050505;
+    --soft: #222222;
+    --line: #262626;
+    --line-strong: #3a3a3a;
+    --ink: #ededed;
+    --ink-2: #a1a1a1;
+    --muted: #8a8a8a;
+    --primary: #ededed;
+    --primary-hover: #ffffff;
+    --on-primary: #0a0a0a;
+    --header-surface: #171717;
+    --on-header: #ededed;
+    --on-header-muted: #8a8a8a;
+    --amber: #f0b34b;
+    --amber-fill: #e9a93a;
+    --amber-soft: rgb(240 179 75 / 0.13);
+    --income: #4cc38a;
+    --income-soft: rgb(76 195 138 / 0.13);
+    --expense: #f2777a;
+    --transfer: #8fb3d1;
+    --tile-green-bg: #12301f;
+    --tile-green: #6fd69a;
+    --tile-blue-bg: #14243f;
+    --tile-blue: #8db4ff;
+    --tile-yellow-bg: #352a0b;
+    --tile-yellow: #f2c94c;
+    --tile-violet-bg: #2a1a40;
+    --tile-violet: #c9a6f5;
+    --tile-neutral-bg: #222222;
+    --tile-neutral: #bdbdbd;
+    --shadow-card: 0 4px 16px rgb(0 0 0 / 0.4);
+    --shadow-raised: 0 8px 24px rgb(0 0 0 / 0.5);
+    --shadow-float: 0 40px 80px -32px rgb(0 0 0 / 0.8);
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0a0a0a;
+  --surface: #141414;
+  --sunken: #050505;
+  --soft: #222222;
+  --line: #262626;
+  --line-strong: #3a3a3a;
+  --ink: #ededed;
+  --ink-2: #a1a1a1;
+  --muted: #8a8a8a;
+  --primary: #ededed;
+  --primary-hover: #ffffff;
+  --on-primary: #0a0a0a;
+  --header-surface: #171717;
+  --on-header: #ededed;
+  --on-header-muted: #8a8a8a;
+  --amber: #f0b34b;
+  --amber-fill: #e9a93a;
+  --amber-soft: rgb(240 179 75 / 0.13);
+  --income: #4cc38a;
+  --income-soft: rgb(76 195 138 / 0.13);
+  --expense: #f2777a;
+  --transfer: #8fb3d1;
+  --tile-green-bg: #12301f;
+  --tile-green: #6fd69a;
+  --tile-blue-bg: #14243f;
+  --tile-blue: #8db4ff;
+  --tile-yellow-bg: #352a0b;
+  --tile-yellow: #f2c94c;
+  --tile-violet-bg: #2a1a40;
+  --tile-violet: #c9a6f5;
+  --tile-neutral-bg: #222222;
+  --tile-neutral: #bdbdbd;
+  --shadow-card: 0 4px 16px rgb(0 0 0 / 0.4);
+  --shadow-raised: 0 8px 24px rgb(0 0 0 / 0.5);
+  --shadow-float: 0 40px 80px -32px rgb(0 0 0 / 0.8);
+}

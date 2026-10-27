@@ -1,0 +1,36 @@
+// 24x24 stroke icons drawn for the site (1.8 stroke, round caps), after the app's icon style.
+export const icons = {
+  arrowUp: 'M12 19V5M6 11l6-6 6 6',
+  arrowDown: 'M12 5v14M6 13l6 6 6-6',
+  arrowRight: 'M5 12h14M13 6l6 6-6 6',
+  swap: 'M4 8h13l-3-3M20 16H7l3 3',
+  box: 'M12 3 4 7v10l8 4 8-4V7l-8-4zM4 7l8 4 8-4M12 11v10',
+  truck: 'M3 6h11v9H3zM14 10h4l3 3v2h-7M6 18.5a1.5 1.5 0 1 0 3 0 1.5 1.5 0 1 0-3 0M15 18.5a1.5 1.5 0 1 0 3 0 1.5 1.5 0 1 0-3 0',
+  home: 'M4 11 12 4l8 7v9h-5v-6H9v6H4z',
+  bolt: 'M13 3 5 14h6l-1 7 8-11h-6l1-7z',
+  tag: 'M3 12V4h8l10 10-8 8L3 12zM7.5 7.5h.01',
+  wallet: 'M4 7h15v12H4zM4 7l11-3v3M15 13h2',
+  bank: 'M3 9 12 4l9 5M5 10v7M10 10v7M14 10v7M19 10v7M3 20h18',
+  plus: 'M12 5v14M5 12h14',
+  eye: 'M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12zM12 9.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z',
+  search: 'M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zM20 20l-4-4',
+  tabHome: 'M4 11 12 4l8 7v9H4z',
+  tabPlan: 'M12 3a9 9 0 1 0 9 9h-9V3zM15 3.5A9 9 0 0 1 20.5 9H15V3.5z',
+  tabList: 'M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01',
+  tabMore: 'M5 12h.01M12 12h.01M19 12h.01',
+  check: 'M5 12.5l4.5 4.5L19 7.5',
+  clock: 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 7v5l3 2',
+  users: 'M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M17 10a2.5 2.5 0 1 0 0-5M17.5 14c2.2.4 3.5 2.4 3.5 6',
+  sun: 'M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4',
+  moon: 'M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z',
+  // Features
+  target: 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM12 12h.01',
+  flag: 'M5 21V4M5 4h12l-2.5 4L17 12H5',
+  receipt: 'M4 6h16v12H4zM4 10h16M8 14h3',
+  chart: 'M4 20V4M4 20h16M8 16v-4M12 16V8M16 16v-6',
+  mic: 'M12 3a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3zM6 11a6 6 0 0 0 12 0M12 17v4',
+  download: 'M12 4v11M7 10l5 5 5-5M5 20h14',
+  lock: 'M6 11h12v9H6zM8.5 11V8a3.5 3.5 0 0 1 7 0v3',
+} as const
+
+export type IconName = keyof typeof icons

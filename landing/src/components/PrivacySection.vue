@@ -66,7 +66,7 @@ watch(inView, (seen) => {
           <g class="device">
             <rect x="132" y="120" width="56" height="80" rx="12" fill="var(--surface)" stroke="var(--ink)" stroke-width="2" />
             <g transform="translate(140 130) scale(0.4)">
-              <path d="M18 64 Q34 58 50 64 T82 64 C79 77 66 86 50 86 C34 86 21 77 18 64 Z" fill="var(--amber-fill)" />
+              <path d="M18 64 Q34 58 50 64 T82 64 C79 77 66 86 50 86 C34 86 21 77 18 64 Z" fill="var(--brand-water)" />
               <g fill="none" stroke="var(--ink)" stroke-linecap="round" stroke-width="7">
                 <path d="M14 44 C14 68 30 86 50 86 C70 86 86 68 86 44" stroke-width="9" />
                 <path d="M26 12 C26 32 44 38 46 54" />

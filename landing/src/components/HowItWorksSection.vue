@@ -200,7 +200,7 @@ onBeforeUnmount(() => observer?.disconnect())
   }
 
   .ready .step .n {
-    color: var(--line-strong);
+    color: var(--muted);
     transition: color var(--dur-3) var(--ease-in-out);
   }
 

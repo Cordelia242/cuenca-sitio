@@ -4,6 +4,7 @@ Sitio público de [Cuenca](https://panel.cuenca.app), la app para presupuestar e
 
 - **Página de la app** (`landing/`): hecha con Vite, Vue 3 y TypeScript. Incluye la sección **Planes** (`#planes`), con la comparación de los planes, ejemplos y preguntas frecuentes; muestra el plan Familiar a USD 3 al mes como precio informativo (todavía no se puede comprar; el precio vigente será el de cada tienda).
 - **Guía de uso** (`guia/`): guía para personas usuarias, hecha con MkDocs Material.
+- **Diseño** (`docs/investigacion-de-diseno.md`): referentes investigados, estilo propio y lenguaje de movimiento. La página usa los tokens del sistema de diseño de la app (`landing/src/styles/tokens.css`) y se prerenderiza al compilar, así que se lee completa sin JavaScript. Hay capturas en `docs/capturas/`.
 - **Política de privacidad** (`guia/docs/privacidad.md`): página pública de la guía en <https://cuenca.app/guia/privacidad/>, enlazada desde el pie de la página y desde la sección Privacidad. Es la URL que se declara en Google Play.
 
 Se publica en Cloudflare Pages: <https://cuenca.app/> (la guía está en <https://cuenca.app/guia/>).

@@ -33,6 +33,9 @@
   --on-header: #fafafa;
   --on-header-muted: #a1a1a1;
 
+  /* Water of the brand mark: the app's logo keeps its green in both themes. */
+  --brand-water: #1d7a46;
+
   /* Amber accent: text-safe ink (>= 4.5:1 on light surfaces), chart fill and soft background */
   --amber: #935400;
   --amber-fill: #b8770a;

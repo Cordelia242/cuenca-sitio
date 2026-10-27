@@ -1,60 +1,98 @@
+<script setup lang="ts">
+import { ref, watch } from 'vue'
+import PhoneFrame from './mock/PhoneFrame.vue'
+import AppRow from './mock/AppRow.vue'
+import AppIcon from './mock/AppIcon.vue'
+import { prefersReducedMotion, useInView } from '../composables/useInView'
+
+const desk = ref<HTMLElement | null>(null)
+const deskInView = useInView(desk)
+const armed = ref(false)
+watch(deskInView, (seen) => {
+  if (seen && !prefersReducedMotion()) armed.value = true
+})
+
+const sidebar = ['Inicio', 'Planes', 'Movimientos', 'Reportes', 'Calendario']
+const commands = [
+  { label: 'Registrar gasto', keys: 'G' },
+  { label: 'Ir a Planes', keys: 'P' },
+  { label: 'Abrir el calendario', keys: 'C' },
+]
+</script>
+
 <template>
   <section id="plataformas" class="section" aria-labelledby="plataformas-title">
     <div class="container">
-      <div data-reveal>
-        <p class="eyebrow">Teléfono y web</p>
-        <h2 id="plataformas-title">En el bolsillo y en el escritorio</h2>
+      <div class="section-head" data-reveal>
+        <p class="label">Teléfono y web</p>
+        <h2 id="plataformas-title">En el bolsillo y en el <em>escritorio</em></h2>
         <p class="lede">Con una cuenta, tus espacios se sincronizan entre tus dispositivos.</p>
       </div>
 
       <div class="cols">
-        <article class="col" data-reveal>
-          <svg class="art phone" viewBox="0 0 160 260" role="img" aria-label="Ilustración de un teléfono con un presupuesto y un reloj Wear OS">
-            <rect x="20" y="8" width="104" height="220" rx="18" fill="var(--surface)" stroke="var(--ink)" stroke-width="2" />
-            <rect x="52" y="16" width="40" height="5" rx="2.5" fill="var(--line)" />
-            <text x="34" y="52" font-size="9" fill="var(--muted)" font-family="Outfit, system-ui, sans-serif">Disponible</text>
-            <text x="34" y="74" font-size="18" font-weight="600" fill="var(--ink)" font-family="Outfit, system-ui, sans-serif">Bs 0</text>
-            <g>
-              <rect x="34" y="96" width="76" height="8" rx="4" fill="var(--accent-soft)" />
-              <rect x="34" y="96" width="76" height="8" rx="4" fill="var(--accent)" />
-              <rect x="34" y="120" width="76" height="8" rx="4" fill="var(--accent-soft)" />
-              <rect x="34" y="120" width="52" height="8" rx="4" fill="var(--accent)" />
-              <rect x="34" y="144" width="76" height="8" rx="4" fill="var(--accent-soft)" />
-              <rect x="34" y="144" width="26" height="8" rx="4" fill="var(--accent)" />
-            </g>
-            <rect x="34" y="176" width="76" height="30" rx="15" fill="var(--accent)" />
-            <text x="72" y="195" font-size="10" text-anchor="middle" fill="#fff" font-weight="600" font-family="Outfit, system-ui, sans-serif">+ Gasto</text>
-            <rect x="134" y="104" width="10" height="14" rx="2" fill="var(--ink)" />
-            <rect x="134" y="152" width="10" height="14" rx="2" fill="var(--ink)" />
-            <rect x="128" y="116" width="26" height="38" rx="9" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="2" />
-            <circle cx="141" cy="135" r="4" fill="var(--ink)" />
-          </svg>
+        <article class="col card" data-reveal>
+          <div
+            class="art phone-art"
+            role="img"
+            aria-label="Ilustración de la pantalla Movimientos de la app para Android, con movimientos de hoy y de ayer."
+          >
+            <div class="phone-clip parallax">
+              <PhoneFrame title="Movimientos" tab="movimientos">
+                <div class="moves">
+                  <span class="search"><AppIcon name="search" />Buscar movimientos</span>
+                  <p class="day"><span>Hoy</span><span class="num">Bs 4.737,00</span></p>
+                  <div class="card group">
+                    <AppRow icon="arrowUp" tone="green" title="Sueldo" subtitle="Ingreso" amount="+Bs 4.800,00" account="Banco" income />
+                    <AppRow icon="box" tone="yellow" title="Almuerzo" subtitle="Comida" amount="−Bs 38,00" account="Billetera" />
+                    <AppRow icon="truck" tone="yellow" title="Taxi" subtitle="Transporte" amount="−Bs 25,00" account="Billetera" />
+                  </div>
+                  <p class="day"><span>Ayer</span><span class="num">−Bs 60,00</span></p>
+                  <div class="card group">
+                    <AppRow icon="home" tone="violet" title="Plomero" subtitle="Mantenimiento del hogar" amount="−Bs 60,00" account="Banco" />
+                  </div>
+                </div>
+              </PhoneFrame>
+            </div>
+          </div>
           <h3>App para Android</h3>
-          <p>
-            Registra al momento, incluso sin conexión; atajos en la pantalla de inicio y en tu reloj Wear OS.
-          </p>
+          <p>Registra al momento, incluso sin conexión; atajos en la pantalla de inicio y en tu reloj Wear OS.</p>
         </article>
 
-        <article class="col" data-reveal style="--i: 1">
-          <svg class="art desk" viewBox="0 0 320 220" role="img" aria-label="Ilustración de una computadora con el cliente web de Cuenca y una paleta de comandos">
-            <rect x="10" y="10" width="300" height="168" rx="12" fill="var(--surface)" stroke="var(--ink)" stroke-width="2" />
-            <rect x="22" y="22" width="68" height="144" rx="6" fill="var(--surface-2)" />
-            <rect x="30" y="34" width="52" height="6" rx="3" fill="var(--line)" />
-            <rect x="30" y="50" width="40" height="6" rx="3" fill="var(--line)" />
-            <rect x="30" y="66" width="48" height="6" rx="3" fill="var(--line)" />
-            <g fill="var(--accent-soft)">
-              <rect x="102" y="22" width="92" height="46" rx="8" />
-              <rect x="204" y="22" width="92" height="46" rx="8" />
-            </g>
-            <polyline points="104,140 128,116 150,128 176,96 198,106 224,84 250,92 292,70" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" />
-            <rect x="96" y="76" width="124" height="26" rx="8" fill="var(--bg)" stroke="var(--accent-text)" stroke-width="1.5" />
-            <text x="106" y="93" font-size="10" fill="var(--muted)" font-family="Outfit, system-ui, sans-serif">Paleta de comandos</text>
-            <path d="M110 178v16M210 178v16M90 196h140" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" />
-          </svg>
+        <article class="col card" data-reveal style="--i: 1">
+          <div
+            ref="desk"
+            class="art desk"
+            :class="{ armed }"
+            role="img"
+            aria-label="Ilustración del cliente web de Cuenca en una computadora, con la barra lateral y la paleta de comandos abierta."
+          >
+            <div class="window">
+              <div class="chrome"><i></i><i></i><i></i></div>
+              <div class="app">
+                <aside class="side">
+                  <span class="side-brand">cuenca</span>
+                  <span v-for="(item, i) in sidebar" :key="item" class="side-item" :class="{ on: i === 2 }">{{ item }}</span>
+                </aside>
+                <div class="main">
+                  <span class="main-title">Movimientos</span>
+                  <span v-for="n in 5" :key="n" class="line" :style="{ '--w': `${92 - n * 9}%` }"></span>
+                </div>
+                <div class="palette">
+                  <span class="palette-input">
+                    <AppIcon name="search" />
+                    <span class="typed">Paleta de comandos</span>
+                  </span>
+                  <span v-for="(c, i) in commands" :key="c.label" class="cmd" :class="{ on: i === 0 }" :style="{ '--i': i }">
+                    {{ c.label }}<kbd>{{ c.keys }}</kbd>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
           <h3>Cliente web para computadora</h3>
           <p>
-            Pensado para pantallas grandes y teclado, con paleta de comandos, atajos de teclado y calendario; para revisar el mes con calma.
-            Requiere iniciar sesión con Google.
+            Pensado para pantallas grandes y teclado, con paleta de comandos, atajos de teclado y calendario; para revisar el
+            mes con calma. Requiere iniciar sesión con Google.
           </p>
         </article>
       </div>
@@ -65,11 +103,11 @@
 <style scoped>
 .cols {
   display: grid;
-  gap: 1.5rem;
-  margin-top: 3rem;
+  gap: var(--s4);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
 }
 
-@media (min-width: 860px) {
+@media (min-width: 900px) {
   .cols {
     grid-template-columns: 0.8fr 1.2fr;
   }
@@ -78,28 +116,245 @@
 .col {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  padding: 2rem 1.5rem;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--surface);
-}
-
-.art {
-  align-self: center;
-  width: 100%;
-  margin-bottom: 1rem;
-}
-
-.phone {
-  max-width: 10rem;
-}
-
-.desk {
-  max-width: 22rem;
+  gap: var(--s3);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  overflow: hidden;
+  border-radius: var(--radius-xl);
 }
 
 .col p {
+  color: var(--ink-2);
+}
+
+.art {
+  display: grid;
+  place-items: center;
+  height: clamp(17rem, 34vw, 22rem);
+  margin-bottom: var(--s4);
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--sunken);
+}
+
+/* The phone peeks out of its panel. */
+.phone-art {
+  place-items: start center;
+  padding-top: 2rem;
+}
+
+.phone-clip {
+  --drift: 18px;
+  --phone-fs: 11px;
+}
+
+.moves {
+  display: grid;
+  gap: 0.6em;
+  padding-top: 0.6em;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0.75em 1em;
+  border-radius: 1em;
+  background: var(--soft);
   color: var(--muted);
+}
+
+.search svg {
+  width: 1.1em;
+}
+
+.day {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.4em;
+  padding-inline: 0.3em;
+  color: var(--ink-2);
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.group {
+  overflow: hidden;
+  border-radius: 1.2em;
+}
+
+/* Desktop window. */
+.desk {
+  padding: 1.5rem;
+}
+
+.window {
+  width: 100%;
+  max-width: 34rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  box-shadow: var(--shadow-raised);
+  font-size: 0.78rem;
+}
+
+.chrome {
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.chrome i {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: var(--line-strong);
+}
+
+.app {
+  position: relative;
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  min-height: 14rem;
+}
+
+.side {
+  display: grid;
+  align-content: start;
+  gap: 0.2rem;
+  padding: 0.8rem 0.6rem;
+  border-right: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.side-brand {
+  margin: 0 0.5rem 0.6rem;
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.side-item {
+  padding: 0.35rem 0.5rem;
+  border-radius: 8px;
+  color: var(--muted);
+}
+
+.side-item.on {
+  background: var(--soft);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.main {
+  display: grid;
+  align-content: start;
+  gap: 0.7rem;
+  padding: 0.9rem 1rem;
+}
+
+.main-title {
+  margin-bottom: 0.3rem;
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.line {
+  width: var(--w);
+  height: 0.55rem;
+  border-radius: var(--radius-pill);
+  background: var(--soft);
+}
+
+.palette {
+  position: absolute;
+  top: 1.6rem;
+  left: 50%;
+  display: grid;
+  width: min(80%, 19rem);
+  padding: 0.4rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-float);
+  transform: translateX(-50%);
+}
+
+.palette-input {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.6rem 0.7rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.palette-input svg {
+  width: 0.95rem;
+}
+
+.cmd {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.25rem;
+  padding: 0.45rem 0.6rem;
+  border-radius: 8px;
+}
+
+.cmd.on {
+  background: var(--soft);
+}
+
+kbd {
+  padding: 0 0.35rem;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  color: var(--muted);
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .armed .palette {
+    animation: palette var(--dur-reveal) var(--ease-out) 300ms both;
+  }
+
+  .armed .typed {
+    animation: type 900ms steps(18, end) 700ms both;
+  }
+
+  .armed .cmd {
+    animation: fade var(--dur-3) var(--ease-out) calc(1100ms + var(--i) * var(--stagger)) both;
+  }
+
+  .armed .cmd.on {
+    animation:
+      fade var(--dur-3) var(--ease-out) 1100ms both,
+      highlight 500ms var(--ease-in-out) 1500ms both;
+  }
+
+  @keyframes palette {
+    from {
+      opacity: 0;
+      transform: translate(-50%, 12px) scale(0.96);
+    }
+  }
+
+  @keyframes type {
+    from {
+      clip-path: inset(0 100% 0 0);
+    }
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  @keyframes highlight {
+    from {
+      background: transparent;
+    }
+  }
 }
 </style>

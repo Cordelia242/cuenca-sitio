@@ -138,9 +138,9 @@ const faqs = [
 <template>
   <section id="planes" class="section plans" aria-labelledby="planes-title">
     <div class="container">
-      <div data-reveal>
-        <p class="eyebrow">Planes</p>
-        <h2 id="planes-title">Elige cómo usar Cuenca</h2>
+      <div class="section-head" data-reveal>
+        <p class="label">Planes</p>
+        <h2 id="planes-title">Elige cómo usar <em>Cuenca</em></h2>
         <p class="lede">
           La app es gratis y funciona en tu teléfono. Si quieres tus datos en varios dispositivos, en el web o compartidos
           con tu familia, elige el plan Familiar: {{ precioFamiliar }} para {{ personasFamiliar }}. El precio es informativo:
@@ -150,10 +150,10 @@ const faqs = [
 
       <ul class="cards">
         <li v-for="(card, i) in cards" :key="card.id" data-reveal :style="{ '--i': i }">
-          <article class="plan-card" :aria-labelledby="`plan-${card.id}`">
+          <article class="plan-card" :class="card.id" :aria-labelledby="`plan-${card.id}`">
             <h3 :id="`plan-${card.id}`">{{ card.name }}</h3>
             <p class="audience">{{ card.audience }}</p>
-            <p class="price">{{ card.price }}</p>
+            <p class="price num">{{ card.price }}</p>
             <p class="status">{{ card.status }}</p>
             <p v-if="card.why" class="why">{{ card.why }}</p>
             <ul class="features">
@@ -168,7 +168,7 @@ const faqs = [
         </li>
       </ul>
 
-      <aside class="selfhost" aria-labelledby="plan-autohospedado" data-reveal>
+      <aside class="selfhost" aria-labelledby="plan-autohospedado" data-reveal style="--i: 2">
         <div>
           <h3 id="plan-autohospedado">Autohospedado</h3>
           <p>
@@ -209,10 +209,10 @@ const faqs = [
       </div>
       <p class="hint">En pantallas pequeñas, desliza la tabla hacia los lados para ver todos los planes.</p>
 
-      <div class="block" data-reveal>
-        <h3>Ejemplos</h3>
+      <div class="block">
+        <h3 data-reveal>Ejemplos</h3>
         <ul class="scenarios">
-          <li v-for="s in scenarios" :key="s.title" class="card">
+          <li v-for="(s, i) in scenarios" :key="s.title" class="card scenario" data-reveal :style="{ '--i': i }">
             <p class="tag">{{ s.plan }}</p>
             <h4>{{ s.title }}</h4>
             <p>{{ s.text }}</p>
@@ -233,16 +233,17 @@ const faqs = [
   </section>
 </template>
 
+
 <style scoped>
 .plans {
-  background: var(--surface-2);
   border-block: 1px solid var(--line);
+  background: var(--sunken);
 }
 
 .cards {
   display: grid;
-  gap: 1.25rem;
-  margin: 3rem 0 0;
+  gap: var(--s4);
+  margin: clamp(2.5rem, 5vw, 4rem) 0 0;
   padding: 0;
   list-style: none;
 }
@@ -262,10 +263,46 @@ const faqs = [
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding: 1.75rem 1.5rem;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
   border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border-radius: var(--radius-xl);
   background: var(--surface);
+  transition:
+    transform var(--dur-3) var(--ease-out),
+    box-shadow var(--dur-3) var(--ease-out);
+}
+
+.plan-card:hover {
+  box-shadow: var(--shadow-raised);
+  transform: translateY(-3px);
+}
+
+/* The shared plan uses the app's dark balance-card surface, in both themes. */
+.plan-card.familiar {
+  border-color: var(--header-surface);
+  background: var(--header-surface);
+  color: var(--on-header);
+}
+
+.plan-card.familiar .audience,
+.plan-card.familiar .features {
+  color: var(--on-header-muted);
+}
+
+.plan-card.familiar .features {
+  border-top-color: rgb(255 255 255 / 0.14);
+}
+
+.plan-card.familiar .features span {
+  color: var(--on-header);
+}
+
+.plan-card.familiar .status {
+  border-color: rgb(255 255 255 / 0.3);
+}
+
+.plan-card.familiar .why {
+  color: #f0b34b;
 }
 
 /* Subgrid lines up name, price, status and features across the cards. */
@@ -308,19 +345,21 @@ const faqs = [
 }
 
 .plan-card h3 {
-  font-size: 1.6rem;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
 .audience {
-  margin-top: 0.5rem;
-  color: var(--muted);
+  margin-top: var(--s2);
+  color: var(--ink-2);
   font-size: 0.98rem;
 }
 
 .price {
-  margin-top: 1.25rem;
-  font-family: var(--display);
-  font-size: 1.35rem;
+  margin-top: var(--s5);
+  font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.2;
@@ -329,17 +368,18 @@ const faqs = [
 .status {
   align-self: flex-start;
   justify-self: start;
-  margin-top: 1rem;
-  padding: 0.35rem 0.9rem;
-  border: 1.5px solid var(--muted);
-  border-radius: 999px;
-  font-size: 0.9rem;
+  margin-top: var(--s4);
+  padding: 0.3rem 0.85rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
   font-weight: 600;
 }
 
 .why {
-  margin-top: 1rem;
-  color: var(--accent-text);
+  margin-top: var(--s4);
+  color: var(--amber);
   font-size: 0.95rem;
   font-weight: 500;
 }
@@ -348,8 +388,8 @@ const faqs = [
   display: grid;
   align-content: start;
   gap: 0.6rem;
-  margin: 1.25rem 0 0;
-  padding: 1.25rem 0 0;
+  margin: var(--s5) 0 0;
+  padding: var(--s5) 0 0;
   border-top: 1px solid var(--line);
   list-style: none;
   font-size: 0.97rem;
@@ -362,10 +402,10 @@ const faqs = [
 
 .features svg {
   flex: none;
-  width: 1.25rem;
-  height: 1.25rem;
-  margin-top: 0.15rem;
-  color: var(--accent-text);
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.2rem;
+  color: var(--amber-fill);
 }
 
 .selfhost {
@@ -373,38 +413,47 @@ const faqs = [
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem 2rem;
-  margin-top: 1.25rem;
-  padding: 1.5rem;
-  border: 1px dashed var(--muted);
-  border-radius: var(--radius);
+  gap: var(--s4) var(--s7);
+  margin-top: var(--s4);
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-xl);
   background: var(--surface);
 }
 
 .selfhost h3 {
-  font-size: 1.3rem;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 400;
 }
 
 .selfhost p:not(.status) {
   max-width: 62ch;
-  margin-top: 0.4rem;
-  color: var(--muted);
+  margin-top: var(--s1);
+  color: var(--ink-2);
 }
 
 .selfhost .status {
   margin-top: 0;
 }
 
+.compare-title,
+.block > h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 2.5vw + 1rem, 2.75rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
 .compare-title {
-  margin-top: 4rem;
-  font-size: clamp(1.4rem, 2vw + 0.8rem, 1.9rem);
+  margin-top: clamp(4rem, 8vw, 6rem);
 }
 
 .table-wrap {
-  margin-top: 1.5rem;
+  margin-top: var(--s6);
   overflow-x: auto;
   border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border-radius: var(--radius-lg);
   background: var(--surface);
 }
 
@@ -417,7 +466,7 @@ table {
 }
 
 caption {
-  padding: 1.25rem 1.25rem 0;
+  padding: var(--s5) var(--s5) 0;
   color: var(--muted);
   font-size: 0.9rem;
   text-align: left;
@@ -425,7 +474,7 @@ caption {
 
 th,
 td {
-  padding: 0.9rem 1rem;
+  padding: 0.95rem 1.1rem;
   border-bottom: 1px solid var(--line);
   text-align: left;
   vertical-align: top;
@@ -435,10 +484,16 @@ tbody tr:last-child > * {
   border-bottom: 0;
 }
 
-thead th {
-  width: 25%;
+tbody tr {
+  transition: background-color var(--dur-2) var(--ease-out);
 }
 
+tbody tr:hover,
+tbody tr:hover th {
+  background: var(--sunken);
+}
+
+thead th,
 .corner {
   width: 25%;
 }
@@ -448,24 +503,25 @@ tbody th {
   position: sticky;
   left: 0;
   background: var(--surface);
+  font-family: var(--font-ui);
   font-weight: 600;
+  transition: background-color var(--dur-2) var(--ease-out);
 }
 
 td {
-  color: var(--muted);
+  color: var(--ink-2);
 }
 
 .plan-name {
   display: block;
-  font-family: var(--display);
-  font-size: 1.2rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 
 .plan-summary {
   display: block;
-  margin-top: 0.25rem;
+  margin-top: var(--s1);
   color: var(--muted);
   font-size: 0.85rem;
   font-weight: 400;
@@ -475,16 +531,16 @@ td {
   display: inline-block;
   margin-top: 0.35rem;
   padding: 0.1rem 0.6rem;
-  border: 1px solid var(--accent-text);
-  border-radius: 999px;
-  background: var(--accent-soft);
-  color: var(--ink);
-  font-size: 0.75rem;
+  border-radius: var(--radius-pill);
+  background: var(--amber-soft);
+  color: var(--amber);
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
   font-weight: 600;
 }
 
 .hint {
-  margin-top: 0.75rem;
+  margin-top: var(--s3);
   color: var(--muted);
   font-size: 0.9rem;
 }
@@ -496,72 +552,134 @@ td {
 }
 
 .block {
-  margin-top: 4rem;
-}
-
-.block > h3 {
-  font-size: clamp(1.4rem, 2vw + 0.8rem, 1.9rem);
+  margin-top: clamp(4rem, 8vw, 6rem);
 }
 
 .scenarios {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
-  gap: 1.25rem;
-  margin: 1.5rem 0 0;
+  gap: var(--s4);
+  margin: var(--s6) 0 0;
   padding: 0;
   list-style: none;
 }
 
-.card {
-  padding: 1.5rem;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--surface);
+.scenario {
+  padding: var(--s6);
+  border-radius: var(--radius-lg);
+  transition:
+    transform var(--dur-3) var(--ease-out),
+    border-color var(--dur-2) var(--ease-out);
+}
+
+.scenario:hover {
+  border-color: var(--line-strong);
+  transform: translateY(-3px);
 }
 
 .tag {
-  color: var(--accent-text);
-  font-size: 0.8rem;
+  color: var(--amber);
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 h4 {
-  margin: 0.5rem 0 0;
-  font-family: var(--display);
+  margin-top: var(--s2);
   font-size: 1.1rem;
-  font-weight: 600;
-  line-height: 1.25;
 }
 
-.card p:last-child {
-  margin-top: 0.5rem;
-  color: var(--muted);
+.scenario p:last-child {
+  margin-top: var(--s2);
+  color: var(--ink-2);
   font-size: 0.98rem;
 }
 
 .faqs {
   display: grid;
-  gap: 0.75rem;
+  gap: var(--s3);
   max-width: 52rem;
-  margin-top: 1.5rem;
+  margin-top: var(--s6);
 }
 
 details {
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: var(--radius-md);
   background: var(--surface);
+  transition: border-color var(--dur-2) var(--ease-out);
+}
+
+details:hover,
+details[open] {
+  border-color: var(--line-strong);
 }
 
 summary {
-  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s4);
+  padding: var(--s4) var(--s5);
   cursor: pointer;
+  font-family: var(--font-ui);
   font-weight: 600;
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Plus that turns into a minus. */
+summary::after {
+  flex: none;
+  width: 0.75rem;
+  height: 0.75rem;
+  background:
+    linear-gradient(currentColor, currentColor) center / 100% 1.5px no-repeat,
+    linear-gradient(currentColor, currentColor) center / 1.5px 100% no-repeat;
+  content: '';
+  transition: transform var(--dur-3) var(--ease-out);
+}
+
+details[open] summary::after {
+  transform: rotate(135deg);
 }
 
 details p {
-  padding: 0 1.25rem 1.1rem;
-  color: var(--muted);
+  padding: 0 var(--s5) var(--s5);
+  color: var(--ink-2);
+}
+
+/* Height animation for the answers where the browser supports it; elsewhere they open instantly. */
+@supports (interpolate-size: allow-keywords) {
+  details {
+    interpolate-size: allow-keywords;
+  }
+
+  details::details-content {
+    height: 0;
+    overflow: clip;
+    transition:
+      height var(--dur-3) var(--ease-out),
+      content-visibility var(--dur-3) allow-discrete;
+  }
+
+  details[open]::details-content {
+    height: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plan-card:hover,
+  .scenario:hover {
+    transform: none;
+  }
+
+  details::details-content {
+    transition: none;
+  }
 }
 </style>

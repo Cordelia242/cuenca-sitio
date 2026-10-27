@@ -1,7 +1,8 @@
 import { onBeforeUnmount, onMounted, ref, type Ref } from 'vue'
 
-// True once the element has entered the viewport (one-shot). Stays false on the server.
-export function useInView(target: Ref<HTMLElement | null>, threshold = 0.35) {
+// True once the element starts entering the viewport (one-shot), so state changes happen at its edge, not mid-view.
+// Stays false on the server.
+export function useInView(target: Ref<HTMLElement | null>, threshold = 0) {
   const inView = ref(false)
   let observer: IntersectionObserver | undefined
 

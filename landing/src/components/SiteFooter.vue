@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import BrandMark from './BrandMark.vue'
-import { appUrl, guideUrl, privacyPolicyUrl } from '../links'
+import { appUrl, guideUrl, privacyPolicyUrl, siteRepoUrl } from '../links'
 
 const year = new Date().getFullYear()
-const repoUrl = 'https://github.com/Cordelia242/cuenca-sitio'
 </script>
 
 <template>
@@ -14,14 +13,14 @@ const repoUrl = 'https://github.com/Cordelia242/cuenca-sitio'
           <BrandMark />
           <span class="brand-name">cuenca</span>
         </div>
-        <p>Todo tu dinero, en un mismo cauce.</p>
+        <p class="motto">Todo tu dinero, en un mismo cauce.</p>
       </div>
       <nav aria-label="Pie de página">
         <ul>
           <li><a :href="appUrl">Abrir Cuenca</a></li>
           <li><a :href="guideUrl">Guía de uso</a></li>
           <li><a :href="privacyPolicyUrl">Política de privacidad</a></li>
-          <li><a :href="repoUrl">Código del sitio</a></li>
+          <li><a :href="siteRepoUrl">Código del sitio</a></li>
         </ul>
       </nav>
       <p class="copy">© {{ year }} Cuenca</p>
@@ -31,7 +30,7 @@ const repoUrl = 'https://github.com/Cordelia242/cuenca-sitio'
 
 <style scoped>
 .footer {
-  padding-block: 2.5rem;
+  padding-block: var(--s9) var(--s8);
   border-top: 1px solid var(--line);
   color: var(--muted);
 }
@@ -41,39 +40,51 @@ const repoUrl = 'https://github.com/Cordelia242/cuenca-sitio'
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 1.5rem 3rem;
+  gap: var(--s6) var(--s9);
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.55rem;
   color: var(--ink);
 }
 
 .brand-name {
-  font-family: var(--display);
-  font-size: 1.35rem;
+  font-family: var(--font-ui);
+  font-size: 1.3rem;
   font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1;
 }
 
-.about p {
-  margin-top: 0.5rem;
+.motto {
+  margin-top: var(--s3);
+  color: var(--ink-2);
+  font-family: var(--font-display);
+  font-size: 1.35rem;
 }
 
 ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem 1.5rem;
+  gap: var(--s2) var(--s6);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
+a {
+  text-decoration-color: transparent;
+  text-underline-offset: 4px;
+  transition:
+    color var(--dur-2) var(--ease-out),
+    text-decoration-color var(--dur-2) var(--ease-out);
+}
+
 a:hover {
   color: var(--ink);
+  text-decoration-color: var(--amber-fill);
 }
 
 .copy {

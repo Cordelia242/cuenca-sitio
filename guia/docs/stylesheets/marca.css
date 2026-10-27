@@ -1,111 +1,300 @@
-/* Marca Cuenca: Tinta #111111, Papel #FAFAFA y un único acento (Positivo). */
+/*
+ * Tema de la guía con el sistema de diseño de la app (el mismo que landing/src/styles/tokens.css):
+ * grises puros, ámbar como único acento, radios de la app, Inter para el texto, Space Grotesk para títulos de producto
+ * e Instrument Serif para los titulares. Las fuentes se sirven desde la propia guía (licencias en assets/fonts).
+ */
 @font-face {
-  font-family: "Outfit";
+  font-family: "Inter Variable";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../assets/fonts/inter-latin-wght-normal.woff2") format("woff2-variations");
+}
+@font-face {
+  font-family: "Space Grotesk Variable";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("../assets/fonts/space-grotesk-latin-wght-normal.woff2") format("woff2-variations");
+}
+@font-face {
+  font-family: "Instrument Serif";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("../assets/fonts/outfit-latin-400-normal.woff2") format("woff2");
+  src: url("../assets/fonts/instrument-serif-latin-400-normal.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Outfit";
-  font-style: normal;
-  font-weight: 500;
+  font-family: "Instrument Serif";
+  font-style: italic;
+  font-weight: 400;
   font-display: swap;
-  src: url("../assets/fonts/outfit-latin-500-normal.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Outfit";
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("../assets/fonts/outfit-latin-600-normal.woff2") format("woff2");
+  src: url("../assets/fonts/instrument-serif-latin-400-italic.woff2") format("woff2");
 }
 
 :root {
-  --md-text-font: "Outfit", system-ui, sans-serif;
+  --md-text-font: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --md-code-font: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --cuenca-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --cuenca-ui: "Space Grotesk Variable", "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --cuenca-radio-md: 16px;
+  --cuenca-radio-lg: 20px;
+  --cuenca-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --cuenca-dur-2: 180ms;
+  --cuenca-dur-3: 240ms;
 }
 
-/* La cabecera es de Tinta en ambos modos, por eso el logo usa trazos de Papel. */
-[data-md-color-scheme="default"],
-[data-md-color-scheme="slate"] {
+/* La cabecera usa la superficie oscura de los encabezados de la app en ambos modos; por eso el logo tiene trazos claros. */
+[data-md-color-scheme="default"] {
   --md-primary-fg-color: #111111;
-  --md-primary-fg-color--light: #2e2e2e;
+  --md-primary-fg-color--light: #333333;
   --md-primary-fg-color--dark: #111111;
   --md-primary-bg-color: #fafafa;
-  --md-primary-bg-color--light: #bdbdbd;
-}
-
-[data-md-color-scheme="default"] {
+  --md-primary-bg-color--light: #a1a1a1;
   --md-default-bg-color: #fafafa;
   --md-default-fg-color: #111111;
-  --md-default-fg-color--light: #6b6b6b;
+  --md-default-fg-color--light: #555555;
   --md-default-fg-color--lighter: #bdbdbd;
   --md-default-fg-color--lightest: #e4e4e4;
-  --md-accent-fg-color: #145a33;
-  --md-accent-fg-color--transparent: rgba(20, 90, 51, 0.1);
+  --md-accent-fg-color: #935400;
+  --md-accent-fg-color--transparent: rgba(184, 119, 10, 0.12);
   --md-typeset-color: #111111;
-  --md-typeset-a-color: #1d7a46;
+  --md-typeset-a-color: #111111;
   --md-code-bg-color: #f1f1f1;
   --md-code-fg-color: #111111;
+  --md-footer-bg-color: #111111;
+  --md-footer-bg-color--dark: #0a0a0a;
+  --cuenca-superficie: #ffffff;
+  --cuenca-hundida: #f1f1f1;
+  --cuenca-ambar: #935400;
+  --cuenca-ambar-relleno: #b8770a;
+  --cuenca-ambar-suave: #f6ead4;
 }
 
 [data-md-color-scheme="slate"] {
   --md-hue: 0;
-  --md-default-bg-color: #111111;
-  --md-default-bg-color--light: rgba(17, 17, 17, 0.54);
-  --md-default-fg-color: #fafafa;
-  --md-default-fg-color--light: #bdbdbd;
+  --md-primary-fg-color: #171717;
+  --md-primary-fg-color--light: #262626;
+  --md-primary-fg-color--dark: #0a0a0a;
+  --md-primary-bg-color: #ededed;
+  --md-primary-bg-color--light: #8a8a8a;
+  --md-default-bg-color: #0a0a0a;
+  --md-default-bg-color--light: rgba(10, 10, 10, 0.54);
+  --md-default-fg-color: #ededed;
+  --md-default-fg-color--light: #a1a1a1;
   --md-default-fg-color--lighter: #6b6b6b;
-  --md-default-fg-color--lightest: #2e2e2e;
-  --md-accent-fg-color: #4fb87f;
-  --md-accent-fg-color--transparent: rgba(79, 184, 127, 0.1);
-  --md-typeset-color: #fafafa;
-  --md-typeset-a-color: #4fb87f;
-  --md-code-bg-color: #1f1f1f;
-  --md-code-fg-color: #fafafa;
-  --md-footer-bg-color: #111111;
-  --md-footer-bg-color--dark: #0a0a0a;
+  --md-default-fg-color--lightest: #262626;
+  --md-accent-fg-color: #f0b34b;
+  --md-accent-fg-color--transparent: rgba(240, 179, 75, 0.13);
+  --md-typeset-color: #ededed;
+  --md-typeset-a-color: #ededed;
+  --md-code-bg-color: #141414;
+  --md-code-fg-color: #ededed;
+  --md-footer-bg-color: #141414;
+  --md-footer-bg-color--dark: #050505;
+  --md-footer-fg-color: #ededed;
+  --md-footer-fg-color--light: #a1a1a1;
+  --md-footer-fg-color--lighter: #a1a1a1;
+  --cuenca-superficie: #141414;
+  --cuenca-hundida: #050505;
+  --cuenca-ambar: #f0b34b;
+  --cuenca-ambar-relleno: #e9a93a;
+  --cuenca-ambar-suave: rgba(240, 179, 75, 0.13);
 }
 
+/* Transición suave entre páginas de la guía y desde la página principal (solo en navegadores con soporte). */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: var(--cuenca-dur-3);
+}
+
+/* Cabecera y pestañas */
 .md-header__button.md-logo img {
   height: 1.6rem;
   width: auto;
 }
 
-.md-typeset h1,
-.md-typeset h2,
-.md-typeset h3 {
+.md-header__title {
+  font-family: var(--cuenca-ui);
   font-weight: 600;
   letter-spacing: -0.02em;
 }
 
-.md-header__title {
-  font-weight: 600;
-  letter-spacing: -0.03em;
+.md-tabs__link {
+  font-family: var(--cuenca-ui);
+  font-weight: 500;
+  transition: opacity var(--cuenca-dur-2) var(--cuenca-ease-out), color var(--cuenca-dur-2) var(--cuenca-ease-out);
 }
 
-.cuenca-lema {
-  margin-top: -0.5rem;
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 1.2;
+.md-search__form {
+  border-radius: 999px;
 }
 
-/* Los enlaces del texto se distinguen también sin depender del color. */
-.md-typeset a:not(.headerlink):not(.md-button) {
-  text-decoration: underline;
-  text-underline-offset: 0.15em;
-}
-
-[data-md-color-scheme="slate"] {
-  --md-footer-fg-color: #fafafa;
-  --md-footer-fg-color--light: #bdbdbd;
-  --md-footer-fg-color--lighter: #bdbdbd;
+/* Titulares: la voz editorial del sitio. */
+.md-typeset h1,
+.md-typeset h2 {
+  font-family: var(--cuenca-display);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
 }
 
 .md-typeset h1 {
   color: var(--md-typeset-color);
+  font-size: 2.6em;
+}
+
+.md-typeset h2 {
+  font-size: 1.85em;
+}
+
+.md-typeset h3,
+.md-typeset h4 {
+  font-family: var(--cuenca-ui);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.cuenca-lema {
+  margin-top: -0.5rem;
+  font-family: var(--cuenca-display);
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+
+/* Los enlaces del texto se distinguen también sin depender del color: subrayado ámbar. */
+.md-typeset a:not(.headerlink):not(.md-button):not(.tabbed-labels a) {
+  text-decoration: underline;
+  text-decoration-color: var(--cuenca-ambar-relleno);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.18em;
+  transition: color var(--cuenca-dur-2) var(--cuenca-ease-out);
+}
+
+.md-typeset a:not(.headerlink):not(.md-button):not(.tabbed-labels a):hover {
+  color: var(--cuenca-ambar);
+}
+
+/* Navegación lateral: el apartado activo como una píldora, como en la app. */
+.md-nav__link {
+  transition: color var(--cuenca-dur-2) var(--cuenca-ease-out);
+}
+
+.md-nav__link--active {
+  font-weight: 600;
+}
+
+/* Botones: una acción principal en tinta, en píldora. */
+.md-typeset .md-button {
+  border-radius: 999px;
+  font-family: var(--cuenca-ui);
+  font-weight: 600;
+  transition:
+    background-color var(--cuenca-dur-2) var(--cuenca-ease-out),
+    transform var(--cuenca-dur-3) var(--cuenca-ease-out);
+}
+
+.md-typeset .md-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Avisos: tarjeta redondeada con borde suave; el tipo se distingue por el ícono, no por una franja de color. */
+.md-typeset .admonition,
+.md-typeset details {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: var(--cuenca-radio-md);
+  background: var(--cuenca-superficie);
+  box-shadow: none;
+  font-size: 0.72rem;
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  border-radius: var(--cuenca-radio-md) var(--cuenca-radio-md) 0 0;
+  background: transparent;
+  font-family: var(--cuenca-ui);
+  font-weight: 600;
+}
+
+.md-typeset details:not([open]) > summary {
+  border-radius: var(--cuenca-radio-md);
+}
+
+.md-typeset .admonition-title::before,
+.md-typeset summary::before {
+  background-color: var(--cuenca-ambar);
+}
+
+.md-typeset .admonition-title::after,
+.md-typeset summary::after {
+  color: var(--md-default-fg-color--light);
+}
+
+/* Tarjetas de la portada: radios de la app y un leve ascenso al pasar el cursor. */
+.md-typeset .grid.cards > ul > li {
+  border-radius: var(--cuenca-radio-lg);
+  background: var(--cuenca-superficie);
+  transition:
+    border-color var(--cuenca-dur-2) var(--cuenca-ease-out),
+    box-shadow var(--cuenca-dur-3) var(--cuenca-ease-out),
+    transform var(--cuenca-dur-3) var(--cuenca-ease-out);
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  border-color: var(--md-default-fg-color--lighter);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Código: superficie hundida con los radios de la app. */
+.md-typeset code {
+  border-radius: 6px;
+}
+
+.md-typeset pre > code {
+  border-radius: var(--cuenca-radio-md);
+}
+
+/* Tablas: tarjeta con borde suave. */
+.md-typeset__table table:not([class]) {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: var(--cuenca-radio-md);
+  box-shadow: none;
+}
+
+.md-typeset table:not([class]) th {
+  font-family: var(--cuenca-ui);
+}
+
+/* Entrada corta del contenido al cargar cada página (solo CSS; con movimiento reducido no hay animación). */
+@media (prefers-reduced-motion: no-preference) {
+  .md-content__inner {
+    animation: cuenca-entrada 500ms var(--cuenca-ease-out) both;
+  }
+
+  @keyframes cuenca-entrada {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+
+  .md-typeset .md-button:hover,
+  .md-typeset .grid.cards > ul > li:hover {
+    transform: none;
+  }
 }
 
 /* Clips de la guía: grabaciones del teléfono que acompañan a los pasos. */
@@ -123,7 +312,7 @@
   height: auto;
   aspect-ratio: 9 / 20;
   border: 1px solid var(--md-default-fg-color--lightest);
-  border-radius: 1rem;
+  border-radius: var(--cuenca-radio-lg);
   background: var(--md-default-fg-color--lightest);
 }
 
@@ -141,6 +330,7 @@
   background: var(--md-primary-fg-color);
   color: var(--md-primary-bg-color);
   font: inherit;
+  font-family: var(--cuenca-ui);
   font-weight: 600;
   cursor: pointer;
 }

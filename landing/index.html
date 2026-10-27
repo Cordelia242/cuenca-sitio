@@ -10,7 +10,7 @@
     />
     <link rel="canonical" href="https://cuenca.app/" />
     <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_BO" />
     <meta property="og:site_name" content="Cuenca" />
@@ -33,15 +33,10 @@
     <meta name="twitter:image" content="https://cuenca.app/og.png" />
     <link rel="icon" href="%BASE_URL%favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="%BASE_URL%apple-touch-icon.png" />
+    <!-- External on purpose: the Content-Security-Policy allows only same-origin scripts. -->
+    <script src="%BASE_URL%tema.js"></script>
   </head>
   <body>
-    <noscript>
-      <p style="max-width: 40rem; margin: 2rem auto; padding: 0 1.25rem; font-family: system-ui, sans-serif; line-height: 1.6">
-        <strong>Cuenca</strong> es un presupuesto personal local-first: asignas cada boliviano a un presupuesto antes de
-        gastarlo. Hay una app para Android y un cliente web para computadora.
-        <a href="/guia/">Lee la guía</a> o <a href="https://panel.cuenca.app">abre Cuenca</a>.
-      </p>
-    </noscript>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>

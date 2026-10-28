@@ -11,12 +11,12 @@ Esta sección es para quien va a **instalar y operar** el servidor. Necesitas se
 
 | | Con tu propio servidor |
 | --- | --- |
-| **Dónde viven tus datos** | Las cuentas, los movimientos y los presupuestos del espacio viven en **tu servidor**. Viajan entre tus dispositivos y tu servidor, y nunca pasan por la nube de Cuenca. |
-| **Qué sigue en la nube de Cuenca** | Tu cuenta y tus sesiones, las personas de cada espacio con sus permisos y sus nombres, el nombre y los datos básicos de cada espacio (como su moneda) y la lista que dice en qué servidor vive cada espacio. Nunca los movimientos, las cuentas ni los presupuestos. |
+| **Dónde viven tus datos** | Las cuentas, los movimientos y los presupuestos del espacio viven en **tu servidor**. Viajan entre tus dispositivos y tu servidor; los datos del libro del espacio no pasan por la nube de Cuenca. |
+| **Qué sigue en la nube de Cuenca** | Tu cuenta y tus sesiones, las personas de cada espacio con sus permisos y sus nombres, el nombre y los datos básicos de cada espacio (como su moneda) y la lista que dice en qué servidor vive cada espacio. Los datos del libro del espacio no pasan por la nube. |
 | **Costo** | Alojar un servidor es gratis. No hay un número máximo de servidores por persona. |
 | **Tu responsabilidad** | Tú haces los respaldos, las actualizaciones y cuidas la seguridad del servidor. Cuenca no lo opera ni lo administra. |
 
-La nube de Cuenca nunca se conecta a tu servidor: son los dispositivos los que hablan con él.
+La nube de Cuenca no se conecta a tu servidor: son los dispositivos los que hablan con él.
 
 !!! danger "Quien opera el servidor puede leer los datos que aloja"
     Los datos de cada espacio quedan en la base de datos de tu servidor, y quien lo opera puede leerlos todos. Si alojas espacios de tu familia o de tus amigos, **tú podrás ver sus movimientos y sus saldos**. Aloja solo espacios cuyas personas confíen en ti, y antes de unirte al espacio de otra persona, asegúrate de que confías en quien opera su servidor.

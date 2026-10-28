@@ -130,11 +130,11 @@ El instalador igual te pide un servidorId. No uses `--local` en la carpeta de un
 !!! warning "Disponible en una próxima versión"
     La app todavía no tiene la pantalla para registrar tu servidor, verificarlo y guardar un espacio en él. Cuando llegue, esta sección explicará cómo hacerlo paso a paso.
 
-Lo que ya se sabe de cómo funcionará:
+Lo previsto, que puede cambiar cuando llegue la pantalla:
 
 - Registras en la app la dirección de tu servidor (por ejemplo, `https://cuenca.example.com`) y recibes un servidorId.
 - Escribes ese servidorId en el servidor con `./instalar.sh --servidores <servidorId>`. El servidor rechaza los permisos de cualquier servidorId que no esté en su lista.
-- La app consulta `https://cuenca.example.com/cuenca/v1/info` y, si encuentra tu servidorId, marca el servidor como verificado.
+- **Pendiente:** está previsto que la app compruebe tu servidor con `https://cuenca.example.com/cuenca/v1/info` y lo marque como verificado si encuentra tu servidorId. La app todavía no lo hace. Mientras tanto, puedes hacer esa misma consulta tú con `curl`, como en el paso 5 de la instalación.
 
 ## Siguiente paso
 

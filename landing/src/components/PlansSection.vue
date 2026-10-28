@@ -125,11 +125,11 @@ const faqs = [
   },
   {
     q: '¿Puedo mezclar espacios en la nube de Cuenca y en mi propio servidor?',
-    a: 'Cada espacio elige dónde vive: solo en tu teléfono, en la nube de Cuenca o en un servidor propio. La app compilada desde el código fuente puede mezclar espacios en la nube y en uno o varios servidores propios. La app de las tiendas, por ahora, no se conecta a servidores propios. Cada web habla con un solo servidor: el web de Cuenca muestra los espacios de la nube y el web de tu servidor, los de ese servidor.',
+    a: 'Sí. Cada espacio elige dónde vive: solo en tu teléfono, en la nube de Cuenca o en un servidor propio, y puedes tener espacios en la nube y en uno o varios servidores. Elegir el servidor de un espacio desde la app llega en la próxima versión.',
   },
   {
     q: '¿Cómo instalo Cuenca en mi propio servidor?',
-    a: 'El autohospedaje ya está disponible. Es gratis y no hay un máximo de servidores por persona. Quien opera el servidor puede leer los datos de los espacios que aloja: únete solo a espacios de servidores en los que confías. Quien lo instala se encarga de las copias de seguridad, las actualizaciones y la seguridad.',
+    a: 'El servidor ya se puede instalar; registrarlo desde la app llega en la próxima versión. Es gratis y no hay un máximo de servidores por persona. Quien opera el servidor puede leer los datos de los espacios que aloja: únete solo a espacios de servidores en los que confías. Quien lo instala se encarga de las copias de seguridad, las actualizaciones y la seguridad.',
     link: { href: selfHostingGuideUrl, text: 'Lee la guía de autohospedaje' },
   },
   {
@@ -177,7 +177,8 @@ const faqs = [
           <h3 id="plan-autohospedado">Autohospedado</h3>
           <p>
             Instala Cuenca en tu propio servidor, gratis y sin máximo de servidores por persona. Tú te encargas del
-            servidor: copias de seguridad, actualizaciones y seguridad.
+            servidor: copias de seguridad, actualizaciones y seguridad. Disponible para instalar; el registro desde la app
+            llega en la próxima versión.
           </p>
           <a class="guide-link" :href="selfHostingGuideUrl">
             Lee la guía de autohospedaje <AppIcon class="arrow" name="arrowRight" />

@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import AppIcon from './mock/AppIcon.vue'
+import { selfHostingGuideUrl } from '../links'
+
 // Mirrors `PLAN_FAMILIAR` in the cuenca repository. Informative only: purchase is not available yet and, once the
 // app sells through Google Play and the App Store, the store price is the one that applies.
 const PLAN_FAMILIAR = { moneda: 'USD', montoMensual: 3, personas: 5 } as const
@@ -10,7 +13,7 @@ const invitadasFamiliar = PLAN_FAMILIAR.personas - 1
 const plans = [
   { name: 'Gratis', summary: 'La app en tu teléfono, sin cuenta' },
   { name: 'Familiar', summary: `Un espacio compartido para ${personasFamiliar}` },
-  { name: 'Autohospedado', summary: 'Cuenca en tu propio servidor', soon: true },
+  { name: 'Autohospedado', summary: 'Cuenca en tu propio servidor' },
 ]
 
 // Summary cards shown above the table.
@@ -64,12 +67,12 @@ const rows = [
     values: [
       'Ninguno',
       'Un único espacio compartido y el Personal de cada persona. Los demás espacios quedan en el teléfono',
-      'Sin límite',
+      'Los que alojes en tu servidor',
     ],
   },
   {
     label: 'Personas',
-    values: ['Una, en su teléfono', `Hasta ${PLAN_FAMILIAR.personas}, incluida quien paga. Solo paga una`, 'Sin límite'],
+    values: ['Una, en su teléfono', `Hasta ${PLAN_FAMILIAR.personas}, incluida quien paga. Solo paga una`, 'Por definir'],
   },
   {
     label: 'Acceso al web',
@@ -125,8 +128,9 @@ const faqs = [
     a: 'Cada espacio elige dónde vive: solo en tu teléfono, en la nube de Cuenca o en un servidor propio. La app compilada desde el código fuente puede mezclar espacios en la nube y en uno o varios servidores propios. La app de las tiendas, por ahora, no se conecta a servidores propios. Cada web habla con un solo servidor: el web de Cuenca muestra los espacios de la nube y el web de tu servidor, los de ese servidor.',
   },
   {
-    q: '¿Cuándo estará disponible el autohospedaje?',
-    a: 'Próximamente. Se ofrecerá gratis, como imágenes Docker del web y del servidor, sin límite de personas. Quien lo instala se encarga del servidor: copias de seguridad, actualizaciones y seguridad.',
+    q: '¿Cómo instalo Cuenca en mi propio servidor?',
+    a: 'El autohospedaje ya está disponible. Es gratis y no hay un máximo de servidores por persona. Quien opera el servidor puede leer los datos de los espacios que aloja: únete solo a espacios de servidores en los que confías. Quien lo instala se encarga de las copias de seguridad, las actualizaciones y la seguridad.',
+    link: { href: selfHostingGuideUrl, text: 'Lee la guía de autohospedaje' },
   },
   {
     q: '¿Cuánto cuesta el Familiar?',
@@ -172,11 +176,14 @@ const faqs = [
         <div>
           <h3 id="plan-autohospedado">Autohospedado</h3>
           <p>
-            Instala Cuenca en tu propio servidor, gratis y sin límite de personas. Tú te encargas del servidor: copias de
-            seguridad, actualizaciones y seguridad.
+            Instala Cuenca en tu propio servidor, gratis y sin máximo de servidores por persona. Tú te encargas del
+            servidor: copias de seguridad, actualizaciones y seguridad.
           </p>
+          <a class="guide-link" :href="selfHostingGuideUrl">
+            Lee la guía de autohospedaje <AppIcon class="arrow" name="arrowRight" />
+          </a>
         </div>
-        <p class="status">Próximamente</p>
+        <p class="status">Disponible</p>
       </aside>
 
       <h3 class="compare-title" data-reveal>Compara los planes en detalle</h3>
@@ -194,7 +201,6 @@ const faqs = [
               <td class="corner"></td>
               <th v-for="plan in plans" :key="plan.name" scope="col">
                 <span class="plan-name">{{ plan.name }}</span>
-                <span v-if="plan.soon" class="badge">Próximamente</span>
                 <span class="plan-summary">{{ plan.summary }}</span>
               </th>
             </tr>
@@ -225,7 +231,10 @@ const faqs = [
         <div class="faqs">
           <details v-for="f in faqs" :key="f.q">
             <summary>{{ f.q }}</summary>
-            <p>{{ f.a }}</p>
+            <p>
+              {{ f.a }}
+              <a v-if="f.link" class="guide-link" :href="f.link.href">{{ f.link.text }}</a>
+            </p>
           </details>
         </div>
       </div>
@@ -437,6 +446,42 @@ const faqs = [
   margin-top: 0;
 }
 
+.guide-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-weight: 600;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 4px;
+  transition: text-decoration-color var(--dur-2) var(--ease-out);
+}
+
+.selfhost .guide-link {
+  margin-top: var(--s3);
+}
+
+.guide-link:hover {
+  text-decoration-color: var(--amber-fill);
+}
+
+.guide-link .arrow {
+  width: 1rem;
+  height: 1rem;
+  transition: transform var(--dur-3) var(--ease-out);
+}
+
+.guide-link:hover .arrow {
+  transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .guide-link:hover .arrow {
+    transform: none;
+  }
+}
+
 .compare-title,
 .block > h3 {
   font-family: var(--font-display);
@@ -525,18 +570,6 @@ td {
   color: var(--muted);
   font-size: 0.85rem;
   font-weight: 400;
-}
-
-.badge {
-  display: inline-block;
-  margin-top: 0.35rem;
-  padding: 0.1rem 0.6rem;
-  border-radius: var(--radius-pill);
-  background: var(--amber-soft);
-  color: var(--amber);
-  font-family: var(--font-ui);
-  font-size: var(--text-xs);
-  font-weight: 600;
 }
 
 .hint {

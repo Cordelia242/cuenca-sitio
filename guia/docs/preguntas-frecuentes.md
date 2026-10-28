@@ -68,6 +68,12 @@
 ??? question "¿Las personas de un espacio compartido ven mis cuentas personales?"
     No. Si pagas un gasto compartido con una cuenta personal, solo ven "Cuenta Personal de" tu nombre, sin nombre de cuenta ni saldo.
 
+??? question "¿Puedo guardar mis datos en un servidor propio?"
+    Todavía no. Ya existe un paquete para instalar tu propio servidor, pero la app todavía no permite guardar espacios en él. Cuando llegue, los movimientos, las cuentas y los presupuestos de esos espacios vivirán en tu servidor, y la nube de Cuenca guardará solo tu cuenta, las personas de cada espacio y en qué servidor vive cada uno. Es gratis. Mira [Autohospedaje](autohospedaje/index.md).
+
+??? question "Si alguien aloja mi espacio en su servidor, ¿puede ver mis datos?"
+    Sí. Quien opera un servidor puede leer todos los datos de los espacios que aloja. Únete solo a espacios alojados en servidores de personas en las que confías. Mira [Autohospedaje](autohospedaje/index.md).
+
 ## Sobre el asistente y el reloj
 
 ??? question "¿El asistente guarda cosas sin preguntarme?"

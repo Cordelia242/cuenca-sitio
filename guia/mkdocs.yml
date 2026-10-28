@@ -107,6 +107,17 @@ nav:
       - Tuve una emergencia: recetas/cubrir-una-emergencia.md
       - Compartir los gastos de la casa: recetas/compartir-gastos-en-casa.md
       - Empieza un mes nuevo: recetas/cambio-de-mes.md
+  - Autohospedaje:
+      - autohospedaje/index.md
+      - Requisitos: autohospedaje/requisitos.md
+      - Conseguir el paquete: autohospedaje/conseguir-el-paquete.md
+      - Instalación guiada: autohospedaje/instalacion.md
+      - Instalación manual: autohospedaje/instalacion-manual.md
+      - Actualizar el servidor: autohospedaje/actualizar.md
+      - Respaldos y restauración: autohospedaje/respaldos.md
+      - Diagnóstico: autohospedaje/diagnostico.md
+      - Lista de seguridad: autohospedaje/seguridad.md
+      - Problemas frecuentes: autohospedaje/problemas-frecuentes.md
   - Preguntas frecuentes: preguntas-frecuentes.md
   - Glosario: glosario.md
   - Política de privacidad: privacidad.md

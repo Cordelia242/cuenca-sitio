@@ -61,6 +61,21 @@ Si compartes un espacio, las personas que se unen ven **todo el contenido de ese
 
 Las invitaciones son códigos de un solo uso que vencen y se pueden revocar.
 
+### Espacios en un servidor de terceros
+
+!!! note "Todavía no disponible"
+    La app todavía no permite guardar espacios en un servidor de terceros. Este apartado describe cómo funcionará y está pendiente de revisión legal.
+
+Podrás guardar un espacio en un servidor que opera otra persona o tú mismo (lee [Autohospedaje](autohospedaje/index.md)). En ese caso:
+
+- **Los datos del espacio van solo a ese servidor.** Sus cuentas, movimientos y presupuestos viajan entre tus dispositivos y ese servidor; los datos del libro del espacio no pasan por nuestros servidores. No operamos ese servidor ni nos conectamos a él. Todavía estamos confirmando qué pasa con las constancias de pago y con Google Calendar en un espacio así: hoy salen de datos del libro que guardamos, y si funcionaran allí, lo diremos en este apartado.
+- **Seguimos guardando lo necesario para darte acceso:** tu cuenta, el nombre y los datos básicos del espacio (como su moneda), sus personas con sus permisos y nombres visibles, y en qué servidor vive el espacio, con la dirección y el nombre de ese servidor.
+- **Quien opera el servidor puede leer todos los datos del espacio**, incluidos su nombre y sus personas por su identificador, y es responsable de ellos. Como cualquier servidor web, también puede registrar datos técnicos de tus conexiones, como tu dirección IP.
+- **Lo que el operador ve en tu permiso de acceso:** tu identificador de cuenta de Cuenca y los identificadores de los espacios de ese servidor a los que tienes acceso, con tu permiso en cada uno. El permiso no lleva tu correo, tu nombre ni tu alias. Ten en cuenta que:
+    - Tu identificador de cuenta es el mismo en todos los servidores, así que dos operadores podrían saber que tratan con la misma persona.
+    - El servidor que guarda tu espacio Personal ve además los identificadores de todos los espacios compartidos de los que eres parte, estén donde estén. No ve sus nombres, sus datos ni sus personas.
+- **Te avisamos antes de unirte.** Si te invitan a un espacio guardado en un servidor de terceros, la app te muestra la dirección y el nombre de ese servidor antes de aceptar, y solo te une si lo confirmas.
+
 ### Constancias de pago de préstamos
 
 Si publicas una constancia de pago de un préstamo para entregársela a otra persona, guardamos en el servidor:
@@ -185,6 +200,8 @@ Ningún sistema es infalible. Si ocurre un incidente de seguridad que afecte tus
 - Los datos de tu teléfono no se borran solos. Para quitarlos, desinstala la app o borra sus datos desde los ajustes de Android.
 
 Si compartes un espacio tuyo con otras personas, antes de eliminar tu cuenta tienes que sacarlas o salir de ese espacio.
+
+**Si registraste servidores de terceros** (todavía no disponible en la app): al eliminar tu cuenta, los servidores que registraste se borran de nuestra lista. Si otras personas todavía usan alguno, por ejemplo porque aloja sus espacios, ese servidor queda sin dueño para que puedan seguir sincronizando: solo se conservan su dirección y su nombre, ya sin relación contigo, y se borra cuando nadie lo usa. Eliminar tu cuenta no borra los datos guardados en un servidor de terceros: pídeselo a quien lo opera.
 
 **Por correo:** si no puedes usar la app, escribe a [**javargasa@cuenca.app**](mailto:javargasa@cuenca.app) desde el correo de tu cuenta de Cuenca y pide que la eliminemos. Para proteger tu cuenta, verificaremos que la solicitud es tuya.
 

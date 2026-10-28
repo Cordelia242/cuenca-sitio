@@ -68,9 +68,12 @@ Las invitaciones son códigos de un solo uso que vencen y se pueden revocar.
 
 Podrás guardar un espacio en un servidor que opera otra persona o tú mismo (lee [Autohospedaje](autohospedaje/index.md)). En ese caso:
 
-- **Los datos del espacio van solo a ese servidor.** Sus cuentas, movimientos y presupuestos viajan entre tus dispositivos y ese servidor, y nunca pasan por nuestros servidores. No operamos ese servidor ni nos conectamos a él.
+- **Los datos del espacio van solo a ese servidor.** Sus cuentas, movimientos y presupuestos viajan entre tus dispositivos y ese servidor; los datos del libro del espacio no pasan por nuestros servidores. No operamos ese servidor ni nos conectamos a él. Todavía estamos confirmando qué pasa con las constancias de pago y con Google Calendar en un espacio así: hoy salen de datos del libro que guardamos, y si funcionaran allí, lo diremos en este apartado.
 - **Seguimos guardando lo necesario para darte acceso:** tu cuenta, el nombre y los datos básicos del espacio (como su moneda), sus personas con sus permisos y nombres visibles, y en qué servidor vive el espacio, con la dirección y el nombre de ese servidor.
-- **Quien opera el servidor puede leer todos los datos del espacio** y es responsable de ellos. Como cualquier servidor web, también puede registrar datos técnicos de tus conexiones, como tu dirección IP.
+- **Quien opera el servidor puede leer todos los datos del espacio**, incluidos su nombre y sus personas por su identificador, y es responsable de ellos. Como cualquier servidor web, también puede registrar datos técnicos de tus conexiones, como tu dirección IP.
+- **Lo que el operador ve en tu permiso de acceso:** tu identificador de cuenta de Cuenca y los identificadores de los espacios de ese servidor a los que tienes acceso, con tu permiso en cada uno. El permiso no lleva tu correo, tu nombre ni tu alias. Ten en cuenta que:
+    - Tu identificador de cuenta es el mismo en todos los servidores, así que dos operadores podrían saber que tratan con la misma persona.
+    - El servidor que guarda tu espacio Personal ve además los identificadores de todos los espacios compartidos de los que eres parte, estén donde estén. No ve sus nombres, sus datos ni sus personas.
 - **Te avisamos antes de unirte.** Si te invitan a un espacio guardado en un servidor de terceros, la app te muestra la dirección y el nombre de ese servidor antes de aceptar, y solo te une si lo confirmas.
 
 ### Constancias de pago de préstamos
